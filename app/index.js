@@ -5,11 +5,9 @@ import {API_URL} from "@env"
 
 export default function Page() {
   return (
-    <View style={styles.container}>
-      <View style={styles.main}>
-        <Text style={styles.title}>Rendez-Vous {API_URL}</Text>
-        <Text style={styles.subtitle}>A new story starts now... </Text>
-      </View>
+    <View className="flex-1 items-center justify-center bg-white">
+      <Text className="text-gray-500 text-5xl">Rendez-Vous</Text>
+      <Text className="text-orange-500 text-lg">A new story starts now... </Text>
     </View>
   );
 }
