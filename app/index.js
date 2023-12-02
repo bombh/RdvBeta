@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
+import {API_URL} from "@env"
+
+
 
 export default function Page() {
   return (
     <View style={styles.container}>
       <View style={styles.main}>
-        <Text style={styles.title}>Rendez-Vous</Text>
-        <Text style={styles.subtitle}>A new story starts now !</Text>
+        <Text style={styles.title}>Rendez-Vous {API_URL}</Text>
+        <Text style={styles.subtitle}>A new story starts now... </Text>
       </View>
     </View>
   );
