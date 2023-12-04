@@ -11,7 +11,7 @@ const Page = () => {
   return (
     <View className="flex-1 items-center justify-center bg-white">
       <Text className="text-gray-500 text-5xl">Rendez-Vous</Text>
-      <Text className="text-amber-500 text-lg mb-5">A new story starts now...</Text>
+      <Text className="text-amber-500 text-lg mb-6">A new story starts now...</Text>
 
       
       <View className="flex-row mb-3">
