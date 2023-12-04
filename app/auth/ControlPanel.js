@@ -1,15 +1,23 @@
 import React, { useLayoutEffect } from 'react'
 
-import { View, Text } from 'react-native'
+import {
+   View,
+   Text,
+   SafeAreaView,
+   Image,
+   TextInput,
+   ScrollView } from 'react-native'
+
+// import Categories from '../components/Categories'
+
+import FeaturedRow from '../../components/profile/FeaturedRow'
+
 
 
 const ControlPanel = () => {
   return (
    <>
-
-      <View>
-         <Text>ControlPanel</Text>
-      </View>
+      <FeaturedRow />
    </>
   )
 }
