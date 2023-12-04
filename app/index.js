@@ -1,35 +1,33 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, Button, Text, View } from "react-native";
 import {API_URL} from "@env"
+import { styled } from 'nativewind';
+
+// Quel interet ???
+const TWPressable = styled(Pressable)
+const TWText = styled(Text)
 
 
-
-export default function Page() {
+const Page = () => {
   return (
     <View className="flex-1 items-center justify-center bg-white">
       <Text className="text-gray-500 text-5xl">Rendez-Vous</Text>
-      <Text className="text-orange-500 text-lg">A new story starts now... </Text>
+      <Text className="text-amber-500 text-lg mb-5">A new story starts now...</Text>
+
+      
+      <View className="flex-row mb-3">
+            <Pressable className="w-3/5 bg-amber-500 p-2 active:bg-amber-600 rounded-md">
+               <Text className="text-lg text-white text-center">Français</Text>
+            </Pressable>
+      </View>
+
+      <View className="flex-row">
+         <Pressable className="w-3/5 bg-amber-500 p-2 active:bg-amber-600 rounded-md">
+               <Text className="text-lg fonsem text-white text-center">Nederlands</Text>
+         </Pressable>
+      </View>
+      
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    padding: 32,
-  },
-  main: {
-    flex: 1,
-    justifyContent: "center",
-    marginHorizontal: "auto",
-  },
-  title: {
-    fontSize: 48,
-    fontWeight: "bold",
-    color: "#333"
-  },
-  subtitle: {
-    fontSize: 32,
-    color: "#999",
-  },
-});
+export default Page
