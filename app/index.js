@@ -1,4 +1,4 @@
-import { Pressable, Button, Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 import {API_URL} from "@env"
 import { styled } from 'nativewind';
 
@@ -15,9 +15,9 @@ const Page = () => {
 
       
       <View className="flex-row mb-3">
-            <Pressable className="w-3/5 bg-amber-500 p-2 active:bg-amber-600 rounded-md">
-               <Text className="text-lg text-white text-center">Français</Text>
-            </Pressable>
+         <Pressable className="w-3/5 bg-amber-500 p-2 active:bg-amber-600 rounded-md">
+            <Text className="text-lg text-white text-center">Français</Text>
+         </Pressable>
       </View>
 
       <View className="flex-row">
