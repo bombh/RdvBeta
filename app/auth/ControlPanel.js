@@ -19,7 +19,7 @@ const ControlPanel = () => {
          }}/>
 
          <ScrollView
-            className="bg-gray-100 px-2"
+            className="bg-gray-200 px-2"
             contentContainerStyle={{
                paddingBottom: 50,
             }}
@@ -27,28 +27,28 @@ const ControlPanel = () => {
          
          {/* Featured Rows */}
          <FeaturedRow 
-            id="123"
+            id="1"
             title="Vous aimerez peut-être"
             description=""
             featuredCategory="featured"
          />
 
          <FeaturedRow 
-            id="1234"
+            id="2"
             title="Ils ont flashé sur vous"
             description=""
             featuredCategory="featured"
          />
 
          <FeaturedRow 
-            id="12345"
+            id="3"
             title="Les nouveaux"
             description=""
             featuredCategory="featured"
          />
 
          <FeaturedRow 
-            id="123456"
+            id="4"
             title="Dans votre région"
             description=""
             featuredCategory="featured"
