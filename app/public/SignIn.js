@@ -20,7 +20,7 @@ const SignIn = () => {
          <Pressable
             className="w-3/5 bg-blue-500 p-2 active:bg-blue-600 rounded-md"
             onPress={() => router.push(`/public/LogIn`)}>
-                  <Text className="text-lg fonsem text-white text-center">Déjà membre ? Connectez-vous</Text>
+                  <Text className="text-lg fonsem text-white text-center">Déjà membre ?</Text>
             </Pressable>
          </View>
          

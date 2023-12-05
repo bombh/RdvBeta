@@ -6,12 +6,12 @@ import ProfileCard from './ProfileCard'
 const FeaturedRow = ({ id, title, description }) => {
    return (
       <View>
-         <View className="flex-row items-center justify-between ml-1 mt-6" >
-            <Text className="font-bold text-lg">{title}</Text>
-            <ArrowRightIcon color={"#00CCBB"} />
+         <View className="flex-row items-center justify-between mt-6 mb-3">
+            <Text className="text-gray-400 text-lg">{title}</Text>
+            <ArrowRightIcon color={"#BBB"} />
          </View>
 
-         <Text className="text-xs text-gray-400 ml-1 pb-3">{description}</Text>
+         {/* <Text className="text-xs text-gray-400 ml-1 pb-3">{description}</Text> */}
 
          <ScrollView
             horizontal
@@ -23,56 +23,37 @@ const FeaturedRow = ({ id, title, description }) => {
 
             {/* ProfileCard */}
             <ProfileCard
-               id={123}
-               imgUrl="https://www.charleroi-metropole.be/app/uploads/2022/11/restaurant-GaultMillau.jpg"
-               title="Les Brigitinnes"
-               rating={4.5}
-               genre="Belgian"
-               address="Place de la Chapelle, 5"
-               short_description="Miam maiam waow trop bon !"
-               dishes={[]}
-               long={50.8412795498955}
-               lat={4.350572776708226}
+               id={1}
+               imgUrl="https://cdn-devfr-img02.rendez-vous.be/photos/RV_BEFR_thumbs/P_1537812_1_991640.jpg"
+               title="Dansceca"
+               age="31 ans"
+               city="Tournai"
             />
 
             <ProfileCard
                id={123}
-               imgUrl="https://www.charleroi-metropole.be/app/uploads/2022/11/restaurant-GaultMillau.jpg"
-               title="Les Brigitinnes"
-               rating={4.5}
-               genre="Belgian"
-               address="Place de la Chapelle, 5"
-               short_description="Miam maiam waow trop bon !"
-               dishes={[]}
-               long={50.8412795498955}
-               lat={4.350572776708226}
+               imgUrl="https://cdn-devfr-img02.rendez-vous.be/photos/RV_BEFR_thumbs/P_1489748_1_251885.jpg"
+               title="Leynalou"
+               age="35 ans"
+               city="Bruxelles"
             />
 
             <ProfileCard
-               id={123}
-               imgUrl="https://www.charleroi-metropole.be/app/uploads/2022/11/restaurant-GaultMillau.jpg"
-               title="Les Brigitinnes"
-               rating={4.5}
-               genre="Belgian"
-               address="Place de la Chapelle, 5"
-               short_description="Miam maiam waow trop bon !"
-               dishes={[]}
-               long={50.8412795498955}
-               lat={4.350572776708226}
+               id={3}
+               imgUrl="https://cdn-devfr-img02.rendez-vous.be/photos/RV_BEFR_thumbs/P_1530337_1_231781.jpg"
+               title="Tara"
+               age="32 ans"
+               city="Bruxelles"
             />
 
             <ProfileCard
-               id={123}
-               imgUrl="https://www.charleroi-metropole.be/app/uploads/2022/11/restaurant-GaultMillau.jpg"
-               title="Les Brigitinnes"
-               rating={4.5}
-               genre="Belgian"
-               address="Place de la Chapelle, 5"
-               short_description="Miam maiam waow trop bon !"
-               dishes={[]}
-               long={50.8412795498955}
-               lat={4.350572776708226}
+               id={2}
+               imgUrl="https://cdn-devfr-img02.rendez-vous.be/photos/RV_BEFR_thumbs/P_1440531_1_324412.jpg"
+               title="Miss1985"
+               age="33 ans"
+               city="Beez"
             />
+
 
 
          </ScrollView>

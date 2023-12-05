@@ -1,38 +1,21 @@
-import {
-   View, Text, TouchableOpacity, Image
-} from 'react-native'
+import { View, Text, TouchableOpacity, Image } from 'react-native'
 
 import React from 'react'
 import { StarIcon } from 'react-native-heroicons/outline'
 
-const ProfileCard = ({
-   id,
-   imgUrl,
-   title,
-   rating,
-   genre,
-   address,
-   short_description,
-   dishes,
-   long,
-   lat,
-}) => {
+const ProfileCard = ({ id, imgUrl, title, age, city }) => {
   return (
-    <TouchableOpacity className="bg-white rounded-sm shadow">
+    <TouchableOpacity className="bg-white rounded-md ">
       <Image
          source={{
             uri: imgUrl,
          }}
-         className="w-64 h-36 rounded-sm"
+         className="w-40 h-40 rounded-md"
       />
 
       <View className="px-3 pb-4">
-         <Text className="font-bold text-lg pt-2">{title}</Text>
-         <View className="flex-row items-center space-x-1">
-            <StarIcon color={"#00CCBB"} size={20} />
-            <Text className="text-xs text-green-500">{rating}</Text>
-            <Text className="text-xs text-gray-500"> {genre}</Text>
-         </View>
+         <Text className="text-center text-lg pt-2 uppercase text-gray-500">{title}</Text>
+         <Text className="text-xs text-center text-gray-500"> {age} - {city}</Text>
       </View>
     </TouchableOpacity>
   )
