@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Image, Pressable } from 'react-native'
 import React from 'react'
 import { HeartIcon, ChatBubbleLeftEllipsisIcon } from 'react-native-heroicons/solid'
 
-const ProfileCard = ({ id, imgUrl, title, age, city }) => {
+const ProfileCard = ({ id, imgUrl, name, age, city }) => {
   return (
     <Pressable className="bg-white rounded-lg shadow border border-gray-100 active:opacity-70 active:bg-gray-100">
       <Image
@@ -24,7 +24,7 @@ const ProfileCard = ({ id, imgUrl, title, age, city }) => {
       </View>
 
       <View className="px-3 pb-3 -mt-2 w-40">
-         <Text className="text-center text-lg pt-2 uppercase text-gray-400">{title}</Text>
+         <Text className="text-center text-lg pt-2 uppercase text-gray-400">{name}</Text>
          <Text numberOfLines={1} className="text-xs text-center text-gray-600"> {age} - {city}</Text>
       </View>
     </Pressable>

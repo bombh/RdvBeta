@@ -27,7 +27,7 @@ const HomeRow = ({ id, title, description }) => {
             <ProfileCard
                id={1}
                imgUrl="https://cdn-devfr-img02.rendez-vous.be/photos/RV_BEFR_thumbs/P_1537812_1_991640.jpg"
-               title="Dansceca"
+               name="Dansceca"
                age="31 ans"
                city="Tournai"
             />
@@ -35,7 +35,7 @@ const HomeRow = ({ id, title, description }) => {
             <ProfileCard
                id={123}
                imgUrl="https://cdn-devfr-img02.rendez-vous.be/photos/RV_BEFR_thumbs/P_1489748_1_251885.jpg"
-               title="Leynalou"
+               name="Leynalou"
                age="35 ans"
                city="Bruxelles"
             />
@@ -43,7 +43,7 @@ const HomeRow = ({ id, title, description }) => {
             <ProfileCard
                id={3}
                imgUrl="https://cdn-devfr-img02.rendez-vous.be/photos/RV_BEFR_thumbs/P_1530337_1_231781.jpg"
-               title="Tara"
+               name="Tara"
                age="32 ans"
                city="Neder-Over-Embeek"
             />
@@ -51,7 +51,7 @@ const HomeRow = ({ id, title, description }) => {
             <ProfileCard
                id={2}
                imgUrl="https://cdn-devfr-img02.rendez-vous.be/photos/RV_BEFR_thumbs/P_1440531_1_324412.jpg"
-               title="Miss1985"
+               name="Miss1985"
                age="33 ans"
                city="Beez"
             />

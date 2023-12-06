@@ -19,7 +19,7 @@ const ControlPanel = () => {
          }}/>
 
       <ScrollView
-         className="bg-white"
+         className="bg-gray-50"
          contentContainerStyle={{
             paddingBottom: 20,
          }}
