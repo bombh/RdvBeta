@@ -1,24 +1,26 @@
 import { View, Text, ScrollView } from 'react-native'
 import React from 'react'
-import { ArrowRightIcon } from 'react-native-heroicons/outline'
-import ProfileCard from './ProfileCard'
+import { ChevronRightIcon } from 'react-native-heroicons/solid'
 
-const FeaturedRow = ({ id, title, description }) => {
+import ProfileCard from './Card';
+
+const HomeRow = ({ id, title, description }) => {
    return (
-      <View>
-         <View className="flex-row items-center justify-between mt-6 mb-3">
+      <View className="mt-2 px-2">
+         <View className="flex-row items-center justify-between mb-1 ml-1">
             <Text className="text-gray-500 text-xl">{title}</Text>
-            <ArrowRightIcon color={"#BBB"} />
+            <ChevronRightIcon color={"#999"} />
          </View>
 
-         {/* <Text className="text-xs text-gray-400 ml-1 pb-3">{description}</Text> */}
+         
 
          <ScrollView
             horizontal
             contentContainerStyle={{
-               columnGap: 12
+               columnGap: 15
             }}
             showsHorizontalScrollIndicator={false}
+            className="pb-5"
          >
 
             {/* ProfileCard */}
@@ -43,7 +45,7 @@ const FeaturedRow = ({ id, title, description }) => {
                imgUrl="https://cdn-devfr-img02.rendez-vous.be/photos/RV_BEFR_thumbs/P_1530337_1_231781.jpg"
                title="Tara"
                age="32 ans"
-               city="Bruxelles"
+               city="Neder-Over-Embeek"
             />
 
             <ProfileCard
@@ -61,4 +63,4 @@ const FeaturedRow = ({ id, title, description }) => {
   )
 }
 
-export default FeaturedRow
+export default HomeRow

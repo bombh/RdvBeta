@@ -1,11 +1,11 @@
 import React, { useLayoutEffect } from 'react'
 
+import { ScrollView, View, Text } from 'react-native';
 import { Stack } from 'expo-router';
 
 // import Categories from '../components/Categories'
 
-import FeaturedRow from '../../components/profile/FeaturedRow'
-import { ScrollView } from 'react-native-gesture-handler';
+import HomeRow from '../../components/profile/HomeRow'
 
 
 const ControlPanel = () => {
@@ -18,36 +18,43 @@ const ControlPanel = () => {
             headerBackVisible: false,
          }}/>
 
-         <ScrollView
-            className="bg-gray-200 px-2"
-            contentContainerStyle={{
-               paddingBottom: 50,
-            }}
-         >
+      <ScrollView
+         className="bg-white"
+         contentContainerStyle={{
+            paddingBottom: 50,
+         }}
+      >
          
+         {/* Promo Message */}
+         <View className="w-full bg-teal-500 p-2">
+            <Text className="text-center text-white">ControlPanel Message</Text>
+         </View>
+         
+
          {/* Featured Rows */}
-         <FeaturedRow 
+         <HomeRow 
             id="1"
             title="Vous aimerez peut-être"
             description=""
             featuredCategory="featured"
          />
 
-         <FeaturedRow 
+
+         <HomeRow 
             id="2"
             title="Ils ont flashé sur vous"
             description=""
             featuredCategory="featured"
          />
 
-         <FeaturedRow 
+         <HomeRow 
             id="3"
             title="Les nouveaux"
             description=""
             featuredCategory="featured"
          />
 
-         <FeaturedRow 
+         <HomeRow 
             id="4"
             title="Dans votre région"
             description=""
