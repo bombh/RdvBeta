@@ -3,5 +3,6 @@
     "codemetrics.basics.DecorationModeEnabled": false,
     "codemetrics.basics.EnabledForJS": false,
     "codemetrics.basics.EnabledForHTML": false,
-    "editor.colorDecorators": false
+    "editor.colorDecorators": false,
+    "editor.wordWrapColumn": 40,
 }

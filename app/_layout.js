@@ -1,6 +1,6 @@
 import { Stack } from 'expo-router/stack';
 
-export default function Layout() {
+const Layout = () => {
   return <Stack
       screenOptions={{
          headerStyle: {
@@ -14,3 +14,5 @@ export default function Layout() {
       }}
   />;
 }
+
+export default Layout

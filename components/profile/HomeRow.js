@@ -7,13 +7,13 @@ import ProfileCard from './Card';
 const HomeRow = ({ id, title, description }) => {
    return (
       <View className="mt-2 px-2">
-         <View className="flex-row items-center justify-between mb-1 ml-1">
+         {/* Title */}
+         <View className="flex-row items-center justify-between mb-1">
             <Text className="text-gray-500 text-xl">{title}</Text>
             <ChevronRightIcon color={"#999"} />
          </View>
 
-         
-
+         {/* Profile row */}
          <ScrollView
             horizontal
             contentContainerStyle={{

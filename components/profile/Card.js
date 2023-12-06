@@ -1,11 +1,11 @@
-import { View, Text, TouchableOpacity, Image } from 'react-native'
+import { View, Text, TouchableOpacity, Image, Pressable } from 'react-native'
 
 import React from 'react'
-import { StarIcon } from 'react-native-heroicons/outline'
+import { HeartIcon, ChatBubbleLeftEllipsisIcon } from 'react-native-heroicons/solid'
 
 const ProfileCard = ({ id, imgUrl, title, age, city }) => {
   return (
-    <TouchableOpacity className="bg-white rounded-lg shadow border border-gray-100">
+    <Pressable className="bg-white rounded-lg shadow border border-gray-100 active:opacity-70 active:bg-gray-100">
       <Image
          source={{
             uri: imgUrl,
@@ -13,11 +13,21 @@ const ProfileCard = ({ id, imgUrl, title, age, city }) => {
          className="w-40 h-40 rounded-lg"
       />
 
-      <View className="px-3 pb-3 w-40">
+      <View className="flex-row justify-evenly -mt-5">
+         <Pressable className="bg-white rounded-full w-10 h-10 border border-sky-500 flex items-center justify-center active:bg-sky-100">
+            <ChatBubbleLeftEllipsisIcon color={"#0ea5e9"} />
+         </Pressable>
+
+         <Pressable className="bg-white rounded-full w-10 h-10 border border-pink-500 items-center justify-center active:bg-pink-100">
+            <HeartIcon color={"#EC4899"} />
+         </Pressable>
+      </View>
+
+      <View className="px-3 pb-3 -mt-2 w-40">
          <Text className="text-center text-lg pt-2 uppercase text-gray-400">{title}</Text>
          <Text numberOfLines={1} className="text-xs text-center text-gray-600"> {age} - {city}</Text>
       </View>
-    </TouchableOpacity>
+    </Pressable>
   )
 }
 

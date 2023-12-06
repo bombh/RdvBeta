@@ -21,15 +21,16 @@ const ControlPanel = () => {
       <ScrollView
          className="bg-white"
          contentContainerStyle={{
-            paddingBottom: 50,
+            paddingBottom: 20,
          }}
       >
          
          {/* Promo Message */}
-         <View className="w-full bg-teal-500 p-2">
+         <View className="w-full bg-teal-500 p-3">
             <Text className="text-center text-white">ControlPanel Message</Text>
          </View>
          
+         <View className="h-1"></View>
 
          {/* Featured Rows */}
          <HomeRow 
