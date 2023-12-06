@@ -18,7 +18,7 @@ const LogIn = () => {
          <View className="flex-row">
             <Pressable
                className="w-3/5 bg-sky-500 p-2 active:bg-sky-600 rounded-md"
-               onPress={() => router.replace('/auth/ControlPanel')}>
+               onPress={() => router.replace('/auth/home')}>
                   <Text className="text-lg fonsem text-white text-center">Log in</Text>
             </Pressable>
          </View>

@@ -1,9 +1,7 @@
 import React, { useLayoutEffect } from 'react'
 
-import { ScrollView, View, Text } from 'react-native';
-import { Stack } from 'expo-router';
-
-// import Categories from '../components/Categories'
+import { ScrollView, View, Text } from 'react-native'
+import { Stack } from 'expo-router'
 
 import HomeRow from '../../components/profile/HomeRow'
 

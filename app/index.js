@@ -1,6 +1,6 @@
 import { Pressable, Text, View } from "react-native";
 import { Stack } from 'expo-router';
-import ChooseLanguage from "./public/ChooseLanguage";
+import ChooseLanguage from "./root/chooseLanguage";
 
 //import {API_URL} from "@env"
 //import { styled } from 'nativewind';

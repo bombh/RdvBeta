@@ -14,13 +14,13 @@ const ChooseLanguage = () => {
       
       <View className="flex-1 items-center justify-center bg-white">
          <Text className="text-gray-500 text-4xl mb-2">Home</Text>
-         <Text className="text-black text-md mb-6">Choix de langue</Text>
+         <Text className="text-black text-md mb-6">Select your language</Text>
 
          
          <View className="flex-row mb-3">
             <Pressable
                className="w-3/5 bg-sky-500 p-2 active:bg-sky-600 rounded-md"
-               onPress={ () => router.push(`/public/SignIn`)}>
+               onPress={ () => router.push(`/root/subscribe`)}>
                <Text className="text-lg text-white text-center">Français</Text>
             </Pressable>
          </View>
@@ -28,7 +28,7 @@ const ChooseLanguage = () => {
          <View className="flex-row">
          <Pressable
                className="w-3/5 bg-sky-500 p-2 active:bg-sky-600 rounded-md"
-               onPress={ () => router.push(`/public/SignIn`)}>
+               onPress={ () => router.push(`/root/subscribe`)}>
                   <Text className="text-lg fonsem text-white text-center">Nederlands</Text>
             </Pressable>
          </View>

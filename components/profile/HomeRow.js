@@ -8,7 +8,7 @@ const HomeRow = ({ id, title, description }) => {
    return (
       <View className="mt-2 px-2">
          {/* Title */}
-         <View className="flex-row items-center justify-between mb-1">
+         <View className="flex-row items-center justify-between mb-2">
             <Text className="text-gray-500 text-xl">{title}</Text>
             <ChevronRightIcon color={"#999"} />
          </View>
@@ -19,7 +19,7 @@ const HomeRow = ({ id, title, description }) => {
             contentContainerStyle={{
                columnGap: 15
             }}
-            showsHorizontalScrollIndicator={false}
+            showsHorizontalScrollIndicator={true}
             className="pb-5"
          >
 
