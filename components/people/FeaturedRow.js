@@ -2,9 +2,9 @@ import { View, Text, ScrollView } from 'react-native'
 import React from 'react'
 import { ChevronRightIcon } from 'react-native-heroicons/solid'
 
-import ProfileCard from './Card';
+import ProfileCard from './ProfileCard'
 
-const HomeRow = ({ id, title, description }) => {
+const FeaturedRow = ({ id, title, description }) => {
    return (
       <View className="mt-2 px-2">
          {/* Title */}
@@ -63,4 +63,4 @@ const HomeRow = ({ id, title, description }) => {
   )
 }
 
-export default HomeRow
+export default FeaturedRow

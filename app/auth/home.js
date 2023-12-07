@@ -3,7 +3,7 @@ import React, { useLayoutEffect } from 'react'
 import { ScrollView, View, Text } from 'react-native'
 import { Stack } from 'expo-router'
 
-import HomeRow from '../../components/profile/HomeRow'
+import FeaturedRow from '../../components/people/FeaturedRow'
 
 
 const ControlPanel = () => {
@@ -31,38 +31,35 @@ const ControlPanel = () => {
          <View className="h-1"></View>
 
          {/* Featured Rows */}
-         <HomeRow 
+         <FeaturedRow 
             id="1"
             title="Vous aimerez peut-être"
             description=""
             featuredCategory="featured"
          />
 
-
-         <HomeRow 
+         <FeaturedRow 
             id="2"
             title="Ils ont flashé sur vous"
             description=""
             featuredCategory="featured"
          />
 
-         <HomeRow 
+         <FeaturedRow 
             id="3"
             title="Les nouveaux"
             description=""
             featuredCategory="featured"
          />
 
-         <HomeRow 
+         <FeaturedRow 
             id="4"
             title="Dans votre région"
             description=""
             featuredCategory="featured"
          />
 
-
       </ScrollView>
-      
    </>
   )
 }

@@ -18,11 +18,11 @@ const ProfileCard = ({ id, imgUrl, name, age, city }) => {
 
       {/* Icons action */}
       <View className="flex-row justify-evenly -mt-5">
-         <Pressable className="bg-white rounded-full w-10 h-10 border border-sky-500 flex items-center justify-center active:bg-sky-100">
+         <Pressable className="bg-white rounded-full w-10 h-10 border border-sky-500 flex items-center justify-center active:bg-sky-900">
             <ChatBubbleLeftEllipsisIcon color={"#0ea5e9"} />
          </Pressable>
          
-         <Pressable className="bg-white rounded-full w-10 h-10 border border-pink-500 items-center justify-center active:bg-pink-100">
+         <Pressable className="bg-white rounded-full w-10 h-10 border border-pink-500 items-center justify-center active:bg-pink-900">
             <HeartIcon color={"#EC4899"} />
          </Pressable>
       </View>
