@@ -1,11 +1,22 @@
 import { View, Text, TouchableOpacity, Image, Pressable } from 'react-native'
-
 import React from 'react'
+import { Stack, useRouter } from 'expo-router'
+
 import { HeartIcon, ChatBubbleLeftEllipsisIcon } from 'react-native-heroicons/solid'
+
+import ButtonChat from './common/ButtonChat'
+import ButtonFlash from './common/ButtonFlash'
+
+const router = useRouter()
+
+let id = 123
 
 const ProfileCard = ({ id, imgUrl, name, age, city }) => {
   return (
-    <Pressable className="bg-white rounded-lg shadow border border-gray-100 active:opacity-70 active:bg-gray-100 relative">
+    <Pressable
+      className="bg-white rounded-lg shadow border border-gray-100 active:opacity-70 active:bg-gray-100 relative"
+      onPress={() => router.push(`/auth/people/${id}`)}
+      >
       <Image
          source={{
             uri: imgUrl,
@@ -17,19 +28,16 @@ const ProfileCard = ({ id, imgUrl, name, age, city }) => {
       <View className="rounded-full border border-white/70 bg-black/50 w-4 h-4 absolute top-2 right-2"></View>
 
       {/* Icons action */}
-      <View className="flex-row justify-evenly -mt-5">
-         <Pressable className="bg-white rounded-full w-10 h-10 border border-sky-500 flex items-center justify-center active:bg-sky-900">
-            <ChatBubbleLeftEllipsisIcon color={"#0ea5e9"} />
-         </Pressable>
+      <Pressable className="flex-row justify-evenly -mt-5">
+
+         <ButtonChat />
+         <ButtonFlash />
          
-         <Pressable className="bg-white rounded-full w-10 h-10 border border-pink-500 items-center justify-center active:bg-pink-900">
-            <HeartIcon color={"#EC4899"} />
-         </Pressable>
-      </View>
+      </Pressable>
 
       {/* Infos */}
       <View className="px-3 pb-3 -mt-2 w-40">
-         <Text className="text-center text-lg pt-2 uppercase text-gray-400">{name}</Text>
+         <Text className="text-center text-lg pt-2 uppercase text-gray-400">12{name}</Text>
          <Text numberOfLines={1} className="text-xs text-center text-gray-600"> {age} - {city}</Text>
       </View>
 
