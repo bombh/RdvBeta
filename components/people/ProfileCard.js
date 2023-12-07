@@ -28,16 +28,17 @@ const ProfileCard = ({ id, imgUrl, name, age, city }) => {
       <View className="rounded-full border border-white/70 bg-black/50 w-4 h-4 absolute top-2 right-2"></View>
 
       {/* Icons action */}
-      <Pressable className="flex-row justify-evenly -mt-5">
+      <View className="flex-row justify-evenly -mt-5">
 
          <ButtonChat />
+         
          <ButtonFlash />
          
-      </Pressable>
+      </View>
 
       {/* Infos */}
       <View className="px-3 pb-3 -mt-2 w-40">
-         <Text className="text-center text-lg pt-2 uppercase text-gray-400">12{name}</Text>
+         <Text className="text-center text-lg pt-2 uppercase text-gray-400">{name}</Text>
          <Text numberOfLines={1} className="text-xs text-center text-gray-600"> {age} - {city}</Text>
       </View>
 

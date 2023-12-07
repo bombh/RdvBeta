@@ -17,7 +17,7 @@ const FeaturedRow = ({ id, title, description }) => {
          <ScrollView
             horizontal
             contentContainerStyle={{
-               columnGap: 15
+               columnGap: 10
             }}
             showsHorizontalScrollIndicator={true}
             className="pb-5"
