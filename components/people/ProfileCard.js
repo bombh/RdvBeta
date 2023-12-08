@@ -15,8 +15,12 @@ const ProfileCard = ({ id, imgUrl, name, age, city }) => {
   return (
     <Pressable
       className="bg-white rounded-lg shadow border border-gray-100 active:opacity-70 active:bg-gray-100 relative"
-      onPress={() => router.push(`/auth/people/${id}`)}
-      >
+      onPress={ () => router.push({
+         pathname: `/auth/people/${id}`,
+         params: { id, imgUrl, name, age, city }
+      })}
+   >
+      
       <Image
          source={{
             uri: imgUrl,

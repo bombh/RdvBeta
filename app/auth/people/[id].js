@@ -1,6 +1,6 @@
 import { View, Text, Image, ScrollView, Pressable } from 'react-native'
 import React, { useLayoutEffect } from 'react'
-import { useNavigation } from 'expo-router'
+import { useLocalSearchParams, useNavigation, useRouter } from 'expo-router'
 
 import { ChevronLeftIcon, CameraIcon } from 'react-native-heroicons/solid'
 
@@ -10,7 +10,10 @@ import ButtonMicro from '../../../components/people/common/ButtonMicro'
 import ButtonPlus from '../../../components/people/common/ButtonPlus'
 
 const ProfileDetail = () => {
-
+   const router = useRouter()
+   const params = useLocalSearchParams()
+   const { id, imgUrl, name, age, city } = params;
+   
    const navigation = useNavigation()
 
    useLayoutEffect(() => {
@@ -30,14 +33,14 @@ const ProfileDetail = () => {
          <View className="relative">
             <Image
                source={{
-                  uri: 'https://cdn-devfr-img02.rendez-vous.be/photos/RV_BEFR_thumbs/P_1537812_1_991640.jpg'
+                  uri: imgUrl,
                }}
                className="w-full aspect-square rounded-2xl"
             />
 
                {/* Back button */}
                <Pressable
-                  className="absolute top-12 left-3 bg-black/50 rounded-full w-10 h-10 border border-white/70 items-center justify-center active:bg-black active:border-white"
+                  className="absolute top-12 left-3 bg-black/20 rounded-full w-10 h-10 border border-white/70 items-center justify-center active:bg-black active:border-white"
                   onPress={() => navigation.goBack()}
                >
                      <ChevronLeftIcon color={"#FFF"} size={20} />
@@ -45,7 +48,7 @@ const ProfileDetail = () => {
 
                {/* Picture button */}
                <Pressable
-                  className="absolute top-12 right-3 bg-black/50 rounded-full w-10 h-10 border border-white/70 items-center justify-center active:bg-black active:border-white"
+                  className="absolute top-12 right-3 bg-black/20 rounded-full w-10 h-10 border border-white/70 items-center justify-center active:bg-black active:border-white"
                >
                      <CameraIcon color={"#FFF"} size={20} />
                </Pressable>
@@ -64,15 +67,19 @@ const ProfileDetail = () => {
 
          {/* Infos */}
          <View className="px-3 pb-3">
-            <Text className="text-center text-2xl pt-3 text-gray-400">Danscesca</Text>
-            <Text className="text-sm text-center text-gray-600">31 ans - Bruxelles</Text>
+            <Text
+               className="text-center text-3xl font-light pt-3 text-gray-400"
+               numberOfLines={1}>
+                  {name}
+            </Text>
+            <Text className="text-sm text-center text-gray-600">{age} - {city}</Text>
          </View>
 
-         <View className="px-6 pb-3">
+         <View className="px-6">
             <Text className="text-lg text-justify leading-6 text-gray-400">Je suis une personne très gentille et je cherche à rencontrer des gens sympas. Je suis une personne très gentille et je cherche à rencontrer des gens sympas</Text>
          </View>
 
-         <View className="my-5 p-2 bg-cyan-500">
+         <View className="mt-6 mb-3 p-2 bg-cyan-500">
             <Text className="text-lg text-center leading-6 text-white">Indispensable</Text>
          </View>
 
@@ -94,7 +101,7 @@ const ProfileDetail = () => {
             <Text className="">1m69 / 61kg</Text>
          </View>
 
-         <View className="my-5 p-2 bg-cyan-500">
+         <View className="mt-6 mb-3 p-2 bg-cyan-500">
             <Text className="text-lg text-center leading-6 text-white">Indispensable</Text>
          </View>
 
@@ -116,7 +123,7 @@ const ProfileDetail = () => {
             <Text className="">1m69 / 61kg</Text>
          </View>
 
-         <View className="my-5 p-2 bg-cyan-500">
+         <View className="mt-6 mb-3 p-2 bg-cyan-500">
             <Text className="text-lg text-center leading-6 text-white">Indispensable</Text>
          </View>
 
