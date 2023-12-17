@@ -8,6 +8,15 @@
       "expo-router"
     ],
     "name": "RdvBeta",
-    "slug": "RdvBeta"
+    "slug": "rdvbeta",
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "7ff6d713-f8fa-4c38-8a73-3978db03af30"
+      }
+    },
+    "owner": "bombh"
   }
 }
