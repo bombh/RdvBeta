@@ -19,7 +19,7 @@ const Subscribe = () => {
          <View className="flex-row w-full justify-center">
             <Pressable
                className="w-3/5 bg-sky-500 p-2 active:bg-sky-600 rounded-md"
-               onPress={() => router.push(`/root/login`)}>
+               onPress={() => router.push(`/login`)}>
                   <Text className="text-lg fonsem text-white text-center">Déjà membre ?</Text>
             </Pressable>
          </View>

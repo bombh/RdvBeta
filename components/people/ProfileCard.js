@@ -32,7 +32,7 @@ const ProfileCard = ({ id, imgUrl, name, age, city }) => {
       <View className="rounded-full border border-white/70 bg-black/50 w-4 h-4 absolute top-2 right-2"></View>
 
       {/* Icons action */}
-      <View className="flex-row justify-evenly -mt-5">
+      <View className="flex-row justify-evenly -mt-7">
 
          <ButtonChat />
          

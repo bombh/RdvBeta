@@ -40,23 +40,23 @@ const ProfileDetail = () => {
 
                {/* Back button */}
                <Pressable
-                  className="absolute top-12 left-3 bg-black/20 rounded-full w-10 h-10 border border-white/70 items-center justify-center active:bg-black active:border-white"
+                  className="absolute top-14 left-3 bg-black/20 rounded-full w-14 h-14 border border-white/70 flex items-center justify-center active:bg-black active:border-white"
                   onPress={() => navigation.goBack()}
                >
-                     <ChevronLeftIcon color={"#FFF"} size={20} />
+                     <ChevronLeftIcon size={30} color={"#FFF"} />
                </Pressable>
 
                {/* Picture button */}
                <Pressable
-                  className="absolute top-12 right-3 bg-black/20 rounded-full w-10 h-10 border border-white/70 items-center justify-center active:bg-black active:border-white"
+                  className="absolute top-14 right-3 bg-black/20 rounded-full w-14 h-14 border border-white/70 flex items-center justify-center active:bg-black active:border-white"
                >
-                     <CameraIcon color={"#FFF"} size={20} />
+                     <CameraIcon size={30} color={"#FFF"} />
                </Pressable>
                
          </View>
 
          {/* Action view */}
-         <View className="flex-row items-center justify-evenly -mt-5 ">
+         <View className="flex-row items-center justify-evenly -mt-7 ">
 
                <ButtonChat />
                <ButtonMicro />

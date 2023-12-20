@@ -9,6 +9,7 @@ const LogIn = () => {
       <Stack.Screen
          options={{
             headerTitle: 'Log In',
+            headerTitleAlign: 'center',
             headerBackTitleVisible: false,
          }} />
       <View className="flex-1 items-center justify-center bg-white">

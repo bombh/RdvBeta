@@ -19,14 +19,14 @@ const ChooseLanguage = () => {
       }} />
       
       <StyledView className="flex-1 items-center justify-center bg-white">
-         <StyledText className="text-gray-500 text-4xl mb-2">Home</StyledText>
+         <StyledText className="text-gray-500 text-4xl mb-2">Home !</StyledText>
          <StyledText className="text-black text-sm mb-6">Select your language</StyledText>
 
          
          <StyledView className="flex-row w-full justify-center mb-3">
             <StyledPressable
                className="w-3/5 bg-sky-500 p-2 active:bg-sky-600 rounded-md"
-               onPress={ () => router.push(`/root/subscribe`)}>
+               onPress={ () => router.push(`/subscribe`)}>
                <StyledText className="text-lg text-white text-center">Français</StyledText>
             </StyledPressable>
          </StyledView>
@@ -34,7 +34,7 @@ const ChooseLanguage = () => {
          <StyledView className="flex-row w-full justify-center">
             <StyledPressable
                className="w-3/5 bg-sky-500 p-2 active:bg-sky-600 rounded-md"
-               onPress={ () => router.push(`/root/subscribe`)}>
+               onPress={ () => router.push(`/subscribe`)}>
                   <StyledText className="text-lg fonsem text-white text-center">Nederlands</StyledText>
             </StyledPressable>
          </StyledView>
