@@ -6,7 +6,7 @@ import { Stack } from 'expo-router'
 import FeaturedRow from '../../components/people/FeaturedRow'
 
 
-const ControlPanel = () => {
+const Home = () => {
   return (
    <>
       <Stack.Screen
@@ -26,7 +26,7 @@ const ControlPanel = () => {
          
          {/* Promo Message */}
          <View className="w-full bg-teal-500 p-3">
-            <Text className="text-center text-white">ControlPanel Message</Text>
+            <Text className="text-center text-white">Home Message</Text>
          </View>
          
          <View className="h-1"></View>
@@ -65,4 +65,4 @@ const ControlPanel = () => {
   )
 }
 
-export default ControlPanel
+export default Home
