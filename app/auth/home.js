@@ -13,7 +13,7 @@ const ControlPanel = () => {
          options={{
             headerTitle: 'Control Panel',
             headerBackTitleVisible: false,
-            headerBackVisible: false,
+            headerBackVisible: true,
             headerTitleAlign: 'center',
          }}/>
 

@@ -1,12 +1,16 @@
-import { Pressable, Text, View } from "react-native";
-import { Stack } from 'expo-router';
+import { Redirect, useRouter } from 'expo-router';
 import ChooseLanguage from "./(public)/chooseLanguage";
 
 
 const App = () => {
-  return (
-      <ChooseLanguage />
-  );
+   const router = useRouter()
+   const isLogged = false
+
+   if(isLogged) {
+      return router.replace('/auth/home')
+   }
+
+   return <ChooseLanguage />
 }
 
 export default App
