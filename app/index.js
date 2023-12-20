@@ -1,5 +1,6 @@
 import { Redirect, useRouter } from 'expo-router';
 import ChooseLanguage from "./(public)/chooseLanguage";
+import Home from './auth/home';
 
 
 const App = () => {
@@ -7,7 +8,7 @@ const App = () => {
    const isLogged = false
 
    if(isLogged) {
-      return router.replace('/auth/home')
+      return <Home />
    }
 
    return <ChooseLanguage />
