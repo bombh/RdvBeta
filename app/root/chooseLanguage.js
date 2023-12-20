@@ -3,7 +3,9 @@ import { Stack } from 'expo-router/stack'
 import { useRouter } from "expo-router"
 import { styled } from 'nativewind'
 
+const StyledView = styled(View);
 const StyledText = styled(Text);
+const StyledPressable = styled(Pressable);
 
 const router = useRouter()
 
@@ -16,28 +18,28 @@ const ChooseLanguage = () => {
          headerTitleAlign: 'center',
       }} />
       
-      <View className="flex-1 items-center justify-center bg-white">
+      <StyledView className="flex-1 items-center justify-center bg-white">
          <StyledText className="text-gray-500 text-4xl mb-2">Home</StyledText>
          <StyledText className="text-black text-sm mb-6">Select your language</StyledText>
 
          
-         <View className="flex-row mb-3">
-            <Pressable
-               className="w-30 bg-sky-500 p-2 active:bg-sky-600 rounded-md"
+         <StyledView className="flex-row w-full justify-center mb-3">
+            <StyledPressable
+               className="w-3/5 bg-sky-500 p-2 active:bg-sky-600 rounded-md"
                onPress={ () => router.push(`/root/subscribe`)}>
                <StyledText className="text-lg text-white text-center">Français</StyledText>
-            </Pressable>
-         </View>
+            </StyledPressable>
+         </StyledView>
 
-         <View className="flex-row">
-            <Pressable
+         <StyledView className="flex-row w-full justify-center">
+            <StyledPressable
                className="w-3/5 bg-sky-500 p-2 active:bg-sky-600 rounded-md"
                onPress={ () => router.push(`/root/subscribe`)}>
                   <StyledText className="text-lg fonsem text-white text-center">Nederlands</StyledText>
-            </Pressable>
-         </View>
+            </StyledPressable>
+         </StyledView>
          
-      </View>
+      </StyledView>
    </>
   )
 }

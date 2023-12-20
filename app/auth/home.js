@@ -14,6 +14,7 @@ const ControlPanel = () => {
             headerTitle: 'Control Panel',
             headerBackTitleVisible: false,
             headerBackVisible: false,
+            headerTitleAlign: 'center',
          }}/>
 
       <ScrollView

@@ -15,7 +15,7 @@ const LogIn = () => {
          <Text className="text-gray-500 text-4xl mb-2">Log In</Text>
          <Text className="text-black text-md mb-6">Form to login</Text>
 
-         <View className="flex-row">
+         <View className="flex-row w-full justify-center">
             <Pressable
                className="w-3/5 bg-sky-500 p-2 active:bg-sky-600 rounded-md"
                onPress={() => router.replace('/auth/home')}>

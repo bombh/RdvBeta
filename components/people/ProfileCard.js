@@ -14,7 +14,7 @@ let id = 123
 const ProfileCard = ({ id, imgUrl, name, age, city }) => {
   return (
     <Pressable
-      className="bg-white rounded-lg shadow border border-gray-100 active:opacity-70 active:bg-gray-100 relative"
+      className="bg-white rounded-lg shadow border border-gray-100 active:opacity-80 active:bg-gray-100 relative"
       onPress={ () => router.push({
          pathname: `/auth/people/${id}`,
          params: { id, imgUrl, name, age, city }
@@ -25,7 +25,7 @@ const ProfileCard = ({ id, imgUrl, name, age, city }) => {
          source={{
             uri: imgUrl,
          }}
-         className="w-40 h-40 rounded-lg"
+         className="w-48 h-48 rounded-lg"
       />
 
       {/* Online status */}
@@ -41,7 +41,7 @@ const ProfileCard = ({ id, imgUrl, name, age, city }) => {
       </View>
 
       {/* Infos */}
-      <View className="px-3 pb-3 -mt-2 w-40">
+      <View className="px-3 pb-3 -mt-2 w-48">
          <Text className="text-center text-lg pt-2 uppercase text-gray-400">{name}</Text>
          <Text numberOfLines={1} className="text-xs text-center text-gray-600"> {age} - {city}</Text>
       </View>
