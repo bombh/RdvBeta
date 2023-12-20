@@ -1,4 +1,10 @@
 import { Stack } from 'expo-router/stack';
+import { NativeWindStyleSheet } from "nativewind";
+
+NativeWindStyleSheet.setOutput({
+   // web: 'css',
+   default: "native",
+});
 
 const Layout = () => {
   return <Stack

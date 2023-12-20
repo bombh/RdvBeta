@@ -2,14 +2,11 @@ import { Pressable, Text, View } from "react-native";
 import { Stack } from 'expo-router';
 import ChooseLanguage from "./root/chooseLanguage";
 
-//import {API_URL} from "@env"
-//import { styled } from 'nativewind';
 
-
-const Page = () => {
+const App = () => {
   return (
       <ChooseLanguage />
   );
 }
 
-export default Page
+export default App
