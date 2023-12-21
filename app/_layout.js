@@ -1,4 +1,4 @@
-import { Stack } from 'expo-router/stack';
+import { Slot } from 'expo-router';
 import { NativeWindStyleSheet } from "nativewind";
 
 NativeWindStyleSheet.setOutput({
@@ -6,19 +6,11 @@ NativeWindStyleSheet.setOutput({
    default: "native",
 });
 
+// Layout Stack in (public) folder
+// Layout Drawer in (auth) folder
+
 const Layout = () => {
-  return <Stack
-      screenOptions={{
-         headerStyle: {
-         backgroundColor: '#f59e0b',
-         },
-         headerTintColor: '#fff',
-         headerTitleStyle: {
-            fontWeight: 'bold',
-         },
-         elevation: 0,
-      }}
-  />;
+  return <Slot />;
 }
 
 export default Layout
