@@ -8,10 +8,10 @@ const App = () => {
    const isLogged = false
 
    if(isLogged) {
-      return <Home />
+      return <Redirect href="/auth/home" />
    }
 
-   return <ChooseLanguage />
+   return <Redirect href="/chooseLanguage" />
 }
 
 export default App

@@ -19,7 +19,7 @@ const ChooseLanguage = () => {
       }} />
       
       <StyledView className="flex-1 items-center justify-center bg-white">
-         <StyledText className="text-gray-500 text-4xl mb-2">Home !</StyledText>
+         <StyledText className="text-gray-500 text-4xl mb-2">Home</StyledText>
          <StyledText className="text-black text-sm mb-6">Select your language</StyledText>
 
          
