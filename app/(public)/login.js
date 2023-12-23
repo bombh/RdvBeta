@@ -19,7 +19,7 @@ const LogIn = () => {
          <View className="flex-row w-full justify-center">
             <Pressable
                className="w-3/5 bg-sky-500 p-2 active:bg-sky-600 rounded-md"
-               onPress={() => router.replace('/auth/home')}>
+               onPress={() => router.replace('/home')}>
                   <Text className="text-lg fonsem text-white text-center">Log in</Text>
             </Pressable>
          </View>
