@@ -1,10 +1,10 @@
 import React, { useLayoutEffect } from 'react'
+import { Drawer } from 'expo-router/drawer'
 
 import { ScrollView, View, Text } from 'react-native'
-import { Stack } from 'expo-router'
 
 import FeaturedRow from '../../components/people/FeaturedRow'
-import { Drawer } from 'expo-router/drawer'
+
 
 
 const Home = () => {
@@ -12,14 +12,14 @@ const Home = () => {
    <>
       <Drawer.Screen
          options={{
-            headerTitle: 'Control Panel',
+            headerShown: true,
             headerStyle: {
                backgroundColor: '#f59e0b',
-               },
-               headerTintColor: '#fff',
-               headerTitleStyle: {
-                  fontWeight: 'bold',
-               },
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+               fontWeight: 'bold',
+            },
                elevation: 0,
          }}/>
 
