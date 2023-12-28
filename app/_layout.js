@@ -6,9 +6,6 @@ NativeWindStyleSheet.setOutput({
    default: "native",
 });
 
-// Layout Stack in (public) folder
-// Layout Drawer in (auth) folder
-
 const Layout = () => {
   return <Slot />;
 }

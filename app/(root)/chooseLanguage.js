@@ -15,7 +15,7 @@ const ChooseLanguage = () => {
       }} />
       
       <View className="flex-1 items-center justify-center bg-white">
-         <Text className="text-gray-500 text-4xl mb-2">Home</Text>
+         <Text className="text-gray-500 text-4xl mb-2">Rendez-Vous</Text>
          <Text className="text-black text-sm mb-6">Select your language</Text>
 
          

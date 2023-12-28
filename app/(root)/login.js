@@ -3,24 +3,25 @@ import { Stack, useRouter } from 'expo-router';
 
 const router = useRouter()
 
-const Subscribe = () => {
+const LogIn = () => {
   return (
    <>
       <Stack.Screen
          options={{
-            headerTitle: 'Subscribe',
-            headerBackTitleVisible: false,
+            headerShown: true,
+            headerTitle: 'Log In',
             headerTitleAlign: 'center',
-         }}/>
+            headerBackTitleVisible: false,
+         }} />
       <View className="flex-1 items-center justify-center bg-white">
-         <Text className="text-gray-500 text-4xl mb-2">Sign In</Text>
-         <Text className="text-black text-md mb-6">Funnel d'inscription</Text>
+         <Text className="text-gray-500 text-4xl mb-2">Log In</Text>
+         <Text className="text-black text-md mb-6">Form login</Text>
 
          <View className="flex-row w-full justify-center">
             <Pressable
                className="w-3/5 bg-sky-500 p-2 active:bg-sky-600 rounded-md"
-               onPress={() => router.push(`/login`)}>
-                  <Text className="text-lg fonsem text-white text-center">Déjà membre ?</Text>
+               onPress={() => router.replace('/auth/home')}>
+                  <Text className="text-lg fonsem text-white text-center">Log in</Text>
             </Pressable>
          </View>
          
@@ -29,4 +30,4 @@ const Subscribe = () => {
   )
 }
 
-export default Subscribe
+export default LogIn

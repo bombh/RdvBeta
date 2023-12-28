@@ -1,15 +1,13 @@
 import { Redirect, useRouter } from 'expo-router';
-import ChooseLanguage from "./(public)/chooseLanguage";
-import Home from './auth/home';
-
 
 const App = () => {
-   const router = useRouter()
-   const isLogged = false
+   const isLogged = true
 
-   if(isLogged) {
-      return <Redirect href="/auth/home" />
-   }
+   //return <Redirect href="/(root)/auth/home/" />
+
+   // if(isLogged) {
+   //    return <Redirect href="/(auth)/home" />
+   // }
 
    return <Redirect href="/chooseLanguage" />
 }
