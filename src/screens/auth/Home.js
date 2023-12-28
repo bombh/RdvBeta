@@ -1,21 +1,23 @@
 import React, { useLayoutEffect } from 'react'
 
 import { ScrollView, View, Text } from 'react-native'
-import { Stack } from 'expo-router'
+import { Drawer } from 'expo-router/drawer'
+import { DrawerToggleButton } from '@react-navigation/drawer'
 
 import FeaturedRow from '../../components/people/FeaturedRow'
 
-
-const Home = () => {
+const HomeScreen = () => {
   return (
    <>
-      <Stack.Screen
+      <Drawer.Screen
          options={{
+            headerShown: true,
             headerTitle: 'Control Panel',
-            headerBackTitleVisible: false,
-            headerBackVisible: true,
             headerTitleAlign: 'center',
-         }}/>
+            headerLeft: () => ( <DrawerToggleButton tintColor='#FFF' /> )
+         }}
+      />
+
 
       <ScrollView
          className="bg-gray-50"
@@ -26,7 +28,7 @@ const Home = () => {
          
          {/* Promo Message */}
          <View className="w-full bg-teal-500 p-3">
-            <Text className="text-center text-white">Home Message</Text>
+            <Text className="text-center text-white">HomeScreen Message</Text>
          </View>
          
          <View className="h-1"></View>
@@ -65,4 +67,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default HomeScreen
