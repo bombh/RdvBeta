@@ -1,7 +1,7 @@
 import { Drawer } from 'expo-router/drawer';
 import DrawerMenu from '../../../src/components/app/DrawerMenu'
 
-import { HomeIcon, ChatBubbleLeftEllipsisIcon, UserGroupIcon, MagnifyingGlassIcon, EnvelopeIcon, SparklesIcon, UserIcon, UsersIcon } from 'react-native-heroicons/solid'
+import { HomeIcon, ChatBubbleLeftEllipsisIcon, UserGroupIcon, MagnifyingGlassIcon, EnvelopeIcon, UserIcon, UsersIcon } from 'react-native-heroicons/solid'
 
 const Layout = () => {
    return (
@@ -14,7 +14,7 @@ const Layout = () => {
             
             headerTitleAlign: 'center',
             drawerStyle : {
-               width: 240,
+               width: 260,
                backgroundColor: '#222',
             },
             drawerLabelStyle: {
@@ -48,6 +48,26 @@ const Layout = () => {
             }}
          />
 
+         <Drawer.Screen name='message'
+            options={{
+               drawerLabel: 'Messages',
+               title: 'Messages',
+               drawerIcon: ({ color }) => (
+                  <ChatBubbleLeftEllipsisIcon color={color} size={20} />
+               )
+            }}
+         />
+
+         <Drawer.Screen name='contact'
+            options={{
+               drawerLabel: 'Contacts',
+               title: 'Contacts',
+               drawerIcon: ({ color }) => (
+                  <UsersIcon color={color} size={20} />
+               )
+            }}
+         />
+
          <Drawer.Screen name='search'
             options={{
                drawerLabel: 'Recherche',
@@ -58,9 +78,18 @@ const Layout = () => {
             }}
          />
 
+         <Drawer.Screen name='public'
+            options={{
+               drawerLabel: 'Messages Publics',
+               title: 'Messages Publics',
+               drawerIcon: ({ color }) => (
+                  <EnvelopeIcon color={color} size={20} />
+               )
+            }}
+         />
 
-
-
+         
+         
       </Drawer>
    );
 }

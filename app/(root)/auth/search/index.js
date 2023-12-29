@@ -15,7 +15,7 @@ const HomeScreen = () => {
       <Stack.Screen
          options={{
             headerShown: true,
-            headerTitle: 'Control Panel',
+            headerTitle: 'Recherche',
             headerTitleAlign: 'center',
             headerLeft: () => ( <DrawerToggleButton tintColor='#FFF' /> )
          }}
