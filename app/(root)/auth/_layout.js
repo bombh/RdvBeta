@@ -48,6 +48,16 @@ const Layout = () => {
             }}
          />
 
+         <Drawer.Screen name='search'
+            options={{
+               drawerLabel: 'Recherche',
+               title: 'Recherche',
+               drawerIcon: ({ color }) => (
+                  <MagnifyingGlassIcon color={color} size={20} />
+               )
+            }}
+         />
+
 
 
 

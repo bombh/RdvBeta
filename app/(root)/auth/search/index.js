@@ -1,12 +1,13 @@
 import React from 'react'
 import { View, Text, Pressable } from 'react-native'
-import { Stack, useRouter } from 'expo-router'
+import { Stack, useRouter, usePathname } from 'expo-router'
 import { Drawer } from 'expo-router/drawer'
 import { DrawerToggleButton } from '@react-navigation/drawer'
 
 const HomeScreen = () => {
 
    const router = useRouter()
+   const pathname = usePathname()
 
    return (
       <>
@@ -27,7 +28,7 @@ const HomeScreen = () => {
          <View className="flex-row w-full justify-center">
             <Pressable
                className="w-3/5 bg-sky-500 p-2 active:bg-sky-600 rounded-md"
-               onPress={() => router.push('/(root)/auth/home/people/detail')}>
+               onPress={() => router.push(`${pathname}/detail`)}>
                   <Text className="text-lg fonsem text-white text-center">Detail</Text>
             </Pressable>
          </View>
