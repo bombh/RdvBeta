@@ -4,10 +4,11 @@ import { useLocalSearchParams, useNavigation, useRouter } from 'expo-router'
 
 import { ChevronLeftIcon, CameraIcon } from 'react-native-heroicons/solid'
 
-import ButtonChat from '../../../../src/components/people/common/ButtonChat'
-import ButtonFlash from '../../../../components/people/common/ButtonFlash'
-import ButtonMicro from '../../../../components/people/common/ButtonMicro'
-import ButtonPlus from '../../../../components/people/common/ButtonPlus'
+import ButtonChat from '../../../components/profile/common/ButtonChat'
+import ButtonFlash from'../../../components/profile/common/ButtonFlash'
+import ButtonMicro from'../../../components/profile/common/ButtonMicro'
+import ButtonPlus from'../../../components/profile/common/ButtonPlus'
+
 
 const ProfileDetailScreen = () => {
    const router = useRouter()

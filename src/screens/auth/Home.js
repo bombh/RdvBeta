@@ -4,7 +4,7 @@ import { ScrollView, View, Text } from 'react-native'
 import { Drawer } from 'expo-router/drawer'
 import { DrawerToggleButton } from '@react-navigation/drawer'
 
-import FeaturedRow from '../../components/people/FeaturedRow'
+import FeaturedRow from '../../components/profile/FeaturedRow'
 
 const HomeScreen = () => {
   return (
