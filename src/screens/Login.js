@@ -1,5 +1,6 @@
 import { View, Text, Pressable } from 'react-native'
 import { Stack, useRouter } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 
 const router = useRouter()
 
@@ -26,6 +27,8 @@ const LogIn = () => {
          </View>
          
       </View>
+
+      <StatusBar style="light" />
    </>
   )
 }

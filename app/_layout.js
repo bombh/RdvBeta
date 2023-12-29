@@ -1,6 +1,7 @@
 import { Slot } from 'expo-router';
 import { NativeWindStyleSheet } from "nativewind";
 
+
 NativeWindStyleSheet.setOutput({
    // web: 'css',
    default: "native",

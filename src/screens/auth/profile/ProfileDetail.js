@@ -36,7 +36,7 @@ const ProfileDetailScreen = () => {
                source={{
                   uri: imgUrl,
                }}
-               className="w-full aspect-square rounded-2xl"
+               className="w-full aspect-square rounded-b-2xl"
             />
 
                {/* Back button */}
