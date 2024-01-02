@@ -1,5 +1,9 @@
 import { Stack } from 'expo-router/stack';
 
+// import { StatusBar }
+// Do not work in _layout...
+// Change it in node_modules/expo-router/src/ExpoRoot.tsx 
+
 const Layout = () => {
   return <Stack
       screenOptions={{
