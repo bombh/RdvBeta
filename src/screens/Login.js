@@ -27,8 +27,6 @@ const LogIn = () => {
          </View>
          
       </View>
-
-      <StatusBar style="light" />
    </>
   )
 }

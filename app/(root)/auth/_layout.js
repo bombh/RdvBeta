@@ -13,7 +13,7 @@ const Layout = () => {
          screenOptions={{
             headerShown: false,
             drawerType: 'slide',
-            drawerHideStatusBarOnOpen: true,
+            // drawerHideStatusBarOnOpen: true,
             
             headerTitleAlign: 'center',
             drawerStyle : {
