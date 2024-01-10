@@ -9,10 +9,10 @@ const ChooseLanguage = () => {
    
    return (
    <>
-      <Stack.Screen options={{
+      {/* <Stack.Screen options={{
          headerTitle: 'Rendez-Vous',
          headerTitleAlign: 'center',
-      }} />
+      }} /> */}
       
       <View className="flex-1 items-center justify-center bg-white">
          <Text className="text-gray-500 text-4xl mb-2">Rendez-Vous</Text>

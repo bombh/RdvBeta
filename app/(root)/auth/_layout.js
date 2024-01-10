@@ -47,9 +47,9 @@ const Layout = () => {
                title: 'Mon Profil',
                drawerIcon: ({ color }) => (
                   <UserIcon color={color} size={20} />
-               )
+               ), 
             }}
-         />
+         /> 
 
          <Drawer.Screen name='message'
             options={{

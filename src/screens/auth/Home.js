@@ -14,7 +14,7 @@ const HomeScreen = () => {
             headerShown: true,
             headerTitle: 'Control Panel',
             headerTitleAlign: 'center',
-            headerLeft: () => ( <DrawerToggleButton tintColor='#FFF' /> )
+            headerLeft: () => <DrawerToggleButton tintColor='#FFF' />
          }}
       />
 

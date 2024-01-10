@@ -1,31 +1,45 @@
 import React from 'react'
 import { View, Text, Image, Pressable, Linking } from 'react-native'
 import { DrawerContentScrollView, DrawerItem, DrawerItemList } from '@react-navigation/drawer'
-import { useRouter } from 'expo-router'
+import { Link, useNavigation, useRouter } from 'expo-router'
 import { SparklesIcon, LinkIcon, XCircleIcon, GlobeAltIcon } from 'react-native-heroicons/solid'
 
 const DrawerMenu = (props) => {
 
-   const router = useRouter()
+   const navigation = useNavigation()
+
+   const goToProfile = function(){
+      navigation.navigate('me')
+   }
 
    return (
       <DrawerContentScrollView {...props}>
-         <View className='w-full flex-row items-center space-x-4  pl-3 py-5'>
-            <Image
-               source={{
-                  uri:'https://cdn-devfr-img02.rendez-vous.be/photos/RV_BEFR/1365176_14_638391.jpg'
-               }}
-               className='w-16 h-16 rounded-full'
-            />
-            
-            <View>
-               <Text className='text-neutral-400 text-lg' numberOfLines={1}>Faaab</Text>
-               <Text className='text-neutral-600 text-sm' numberOfLines={1}>47 ans • Bruxelles</Text>
-            </View>
-         </View>
+    
+         {/* Profile Box */}
+         <DrawerItem
+            label={ (focused, color) => (
+               <View className='w-full flex-row items-center space-x-4  pl-0 pb-2'>
+                  <Image
+                     source={{
+                        uri:'https://cdn-devfr-img02.rendez-vous.be/photos/RV_BEFR/1365176_14_638391.jpg'
+                     }}
+                     className='w-16 h-16 rounded-full'
+                  />
+                  
+                  <View>
+                     <Text className='text-neutral-400 text-lg' numberOfLines={1}>Faaab</Text>
+                     <Text className='text-neutral-600 text-sm' numberOfLines={1}>47 ans • Bruxelles</Text>
+                  </View>
+               </View>
+            )}
+            onPress={goToProfile}
+            inactiveTintColor="#AAA"            
+         />
          
+         {/* Drawers menus */}
          <DrawerItemList {...props} />
 
+         {/* Links to web */}
          <DrawerItem
             label="Events Rendez-Vous" 
             onPress={() => Linking.openURL('https://fr.rendez-vous.be/events')}
@@ -38,7 +52,7 @@ const DrawerMenu = (props) => {
             )}
          />
 
-         <DrawerItem
+         {/* <DrawerItem
             label="Version Web" 
             onPress={() => Linking.openURL('https://fr.rendez-vous.be/app')}
             inactiveTintColor="#AAA"
@@ -48,7 +62,7 @@ const DrawerMenu = (props) => {
             icon={({ color }) => (
                <GlobeAltIcon color={color} size={20} />
             )}
-         />
+         /> */}
 
          <DrawerItem
             label="Déconnexion" 
@@ -62,7 +76,7 @@ const DrawerMenu = (props) => {
             )}
          />
 
-         <DrawerItem
+         {/* <DrawerItem
             label="Aide" 
             onPress={() => Linking.openURL('https://fr.rendez-vous.be/events')}
             inactiveTintColor="#666"
@@ -73,7 +87,7 @@ const DrawerMenu = (props) => {
             icon={({ color }) => (
                <LinkIcon color={color} size={14} />
             )}
-         />
+         /> */}
 
          <DrawerItem
             label="Confidentialité" 
