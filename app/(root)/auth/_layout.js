@@ -2,9 +2,12 @@ import { Drawer } from 'expo-router/drawer';
 import DrawerMenu from '../../../src/components/app/DrawerMenu'
 
 import { HomeIcon, ChatBubbleLeftEllipsisIcon, UserGroupIcon, MagnifyingGlassIcon, EnvelopeIcon, UserIcon, UsersIcon } from 'react-native-heroicons/solid'
+import { StatusBar } from 'expo-status-bar';
 
 const Layout = () => {
    return (
+      <>
+      <StatusBar style='light' hidden={true} />
       <Drawer
          
          screenOptions={{
@@ -91,6 +94,7 @@ const Layout = () => {
          
          
       </Drawer>
+      </>
    );
 }
 

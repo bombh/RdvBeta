@@ -41,7 +41,7 @@ const ProfileDetailScreen = () => {
 
                {/* Back button */}
                <Pressable
-                  className="absolute top-14 left-3 bg-black/20 rounded-full w-14 h-14 border border-white/70 flex items-center justify-center active:bg-black active:border-white"
+                  className="absolute top-12 left-3 bg-black/20 rounded-full w-14 h-14 border border-white/70 flex items-center justify-center active:bg-black active:border-white"
                   onPress={() => navigation.goBack()}
                >
                      <ChevronLeftIcon size={30} color={"#FFF"} />
@@ -49,7 +49,7 @@ const ProfileDetailScreen = () => {
 
                {/* Picture button */}
                <Pressable
-                  className="absolute top-14 right-3 bg-black/20 rounded-full w-14 h-14 border border-white/70 flex items-center justify-center active:bg-black active:border-white"
+                  className="absolute top-12 right-3 bg-black/20 rounded-full w-14 h-14 border border-white/70 flex items-center justify-center active:bg-black active:border-white"
                >
                      <CameraIcon size={30} color={"#FFF"} />
                </Pressable>
