@@ -92,7 +92,7 @@ const ProfileDetailScreen = () => {
             {/* Action view */}
             <View className="flex-row items-center justify-evenly -mt-7">
 
-                  <ButtonChat />
+                  <ButtonChat onPress={handleOpenBottomMessage} />
                   <ButtonMicro />
                   <ButtonFlash />
                   <ButtonPlus />
@@ -100,10 +100,6 @@ const ProfileDetailScreen = () => {
             </View>
 
             {/* Infos */}
-            <View>
-               <Button title='Open' onPress={handleOpenBottomMessage} />
-               <Button title='Close' onPress={handleCloseBottomMessage} />
-            </View>
             <View className='bg-white mt-2'>
                <View className="p-2">
                   <Text
