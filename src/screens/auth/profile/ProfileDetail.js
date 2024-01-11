@@ -1,4 +1,4 @@
-import { View, Text, Image, ScrollView, Pressable, Dimensions } from 'react-native'
+import { View, Text, Image, ScrollView, Pressable, Dimensions, Button } from 'react-native'
 import React, { useLayoutEffect, useMemo, useRef } from 'react'
 import { useLocalSearchParams, useNavigation, useRouter } from 'expo-router'
 
@@ -100,6 +100,10 @@ const ProfileDetailScreen = () => {
             </View>
 
             {/* Infos */}
+            <View>
+               <Button title='Open' onPress={handleOpenBottomMessage} />
+               <Button title='Close' onPress={handleCloseBottomMessage} />
+            </View>
             <View className='bg-white mt-2'>
                <View className="p-2">
                   <Text
