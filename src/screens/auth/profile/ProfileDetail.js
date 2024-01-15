@@ -1,6 +1,7 @@
 import { View, Text, Image, ScrollView, Pressable, Dimensions, Button } from 'react-native'
-import React, { useLayoutEffect, useMemo, useRef } from 'react'
+import React, { useCallback, useLayoutEffect, useMemo, useRef } from 'react'
 import { useLocalSearchParams, useNavigation, useRouter } from 'expo-router'
+import BottomSheet, { BottomSheetBackdrop } from '@gorhom/bottom-sheet/'
 
 import { ChevronLeftIcon, CameraIcon } from 'react-native-heroicons/solid'
 
@@ -10,7 +11,6 @@ import ButtonMicro from'../../../components/profile/common/ButtonMicro'
 import ButtonPlus from'../../../components/profile/common/ButtonPlus'
 
 import Animated, { interpolate, useAnimatedRef, useAnimatedStyle, useScrollViewOffset } from 'react-native-reanimated'
-import BottomSheet from '@gorhom/bottom-sheet/'
 
 
 const ProfileDetailScreen = () => {
@@ -28,10 +28,17 @@ const ProfileDetailScreen = () => {
    
    // Bottomsheet
    const snapPoints =useMemo( () => ['60%'], [] )
-   const bottomSheetRef = useRef(null)
 
-   const handleCloseBottomMessage = () => bottomSheetRef.current?.close()
-   const handleOpenBottomMessage = () => bottomSheetRef.current?.expand()
+   
+   const refModalMessage = useRef(null)
+   
+   const closeModalMessage = () => refModalMessage.current?.close()
+   const openModalMessage = () => refModalMessage.current?.expand()
+   
+   const renderBackdrop = useCallback(
+      (props) => <BottomSheetBackdrop appearsOnIndex={0} disappearsOnIndex={-1} {...props} />,
+      []
+   )
 
    // Parallax Effect
    const { width } = Dimensions.get("window")
@@ -92,7 +99,7 @@ const ProfileDetailScreen = () => {
             {/* Action view */}
             <View className="flex-row items-center justify-evenly -mt-7">
 
-                  <ButtonChat onPress={handleOpenBottomMessage} />
+                  <ButtonChat onPress={openModalMessage} />
                   <ButtonMicro />
                   <ButtonFlash />
                   <ButtonPlus />
@@ -182,10 +189,12 @@ const ProfileDetailScreen = () => {
             </View>
          </Animated.ScrollView>
 
-         <BottomSheet ref={bottomSheetRef}
+         <BottomSheet ref={refModalMessage}
             // index={-1}
             snapPoints={snapPoints}
             enablePanDownToClose={true}
+            index={-1}
+            backdropComponent={renderBackdrop}
             handleIndicatorStyle={{
                backgroundColor: '#FFF'
             }}
@@ -194,7 +203,7 @@ const ProfileDetailScreen = () => {
             }}
          >
             <Text>Waoow</Text>
-            <Pressable onPress={handleCloseBottomMessage}>
+            <Pressable onPress={closeModalMessage}>
                <Text>Close</Text>
             </Pressable>
          </BottomSheet>
