@@ -3,6 +3,7 @@ import { View, Text, Image, Pressable, Linking } from 'react-native'
 import { DrawerContentScrollView, DrawerItem, DrawerItemList } from '@react-navigation/drawer'
 import { Link, useNavigation, useRouter } from 'expo-router'
 import { SparklesIcon, LinkIcon, XCircleIcon, GlobeAltIcon } from 'react-native-heroicons/solid'
+import colors from 'tailwindcss/colors'
 
 const DrawerMenu = (props) => {
 
@@ -32,8 +33,7 @@ const DrawerMenu = (props) => {
                   </View>
                </View>
             )}
-            onPress={goToProfile}
-            inactiveTintColor="#AAA"            
+            onPress={goToProfile}          
          />
          
          {/* Drawers menus */}
@@ -43,7 +43,7 @@ const DrawerMenu = (props) => {
          <DrawerItem
             label="Events Rendez-Vous" 
             onPress={() => Linking.openURL('https://fr.rendez-vous.be/events')}
-            inactiveTintColor="#AAA"
+            inactiveTintColor={colors.neutral[400]}
             labelStyle= {{
                marginLeft: -20,
             }}
@@ -52,22 +52,10 @@ const DrawerMenu = (props) => {
             )}
          />
 
-         {/* <DrawerItem
-            label="Version Web" 
-            onPress={() => Linking.openURL('https://fr.rendez-vous.be/app')}
-            inactiveTintColor="#AAA"
-            labelStyle= {{
-               marginLeft: -20,
-            }}
-            icon={({ color }) => (
-               <GlobeAltIcon color={color} size={20} />
-            )}
-         /> */}
-
          <DrawerItem
             label="Déconnexion" 
             onPress={() => Linking.openURL('https://fr.rendez-vous.be/app/free/rules.cfm#anchorRules_2')}
-            inactiveTintColor="#AAA"
+            inactiveTintColor={colors.neutral[400]}
             labelStyle= {{
                marginLeft: -20,
             }}
@@ -79,7 +67,7 @@ const DrawerMenu = (props) => {
          {/* <DrawerItem
             label="Aide" 
             onPress={() => Linking.openURL('https://fr.rendez-vous.be/events')}
-            inactiveTintColor="#666"
+            inactiveTintColor={colors.neutral[500]}
             labelStyle= {{
                marginLeft: -16,
                fontSize: 13,
@@ -92,7 +80,7 @@ const DrawerMenu = (props) => {
          <DrawerItem
             label="Confidentialité" 
             onPress={() => Linking.openURL('https://fr.rendez-vous.be/app/free/privacy.cfm')}
-            inactiveTintColor="#666"
+            inactiveTintColor={colors.neutral[500]}
             labelStyle= {{
                marginLeft: -16,
                fontSize: 13,
@@ -104,7 +92,7 @@ const DrawerMenu = (props) => {
          <DrawerItem
             label="Infos légales" 
             onPress={() => Linking.openURL('https://fr.rendez-vous.be/app/free/rules.cfm#anchorRules_3')}
-            inactiveTintColor="#666"
+            inactiveTintColor={colors.neutral[500]}
             labelStyle= {{
                marginLeft: -16,
                fontSize: 13,
@@ -117,7 +105,7 @@ const DrawerMenu = (props) => {
          <DrawerItem
             label="Nos abonnements" 
             onPress={() => Linking.openURL('https://fr.rendez-vous.be/app/free/rules.cfm#anchorRules_4')}
-            inactiveTintColor="#666"
+            inactiveTintColor={colors.neutral[500]}
             labelStyle= {{
                marginLeft: -16,
                fontSize: 13,
@@ -130,7 +118,7 @@ const DrawerMenu = (props) => {
          <DrawerItem
             label="Conditions générales" 
             onPress={() => Linking.openURL('https://fr.rendez-vous.be/app/free/rules.cfm#anchorRules_2')}
-            inactiveTintColor="#666"
+            inactiveTintColor={colors.neutral[500]}
             labelStyle= {{
                marginLeft: -16,
                fontSize: 13,
@@ -142,11 +130,6 @@ const DrawerMenu = (props) => {
 
          <View className='h-14' />
 
-
-
-
-
-         
       </DrawerContentScrollView>
    )
 }

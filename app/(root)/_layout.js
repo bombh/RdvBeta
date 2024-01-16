@@ -1,5 +1,6 @@
 import { Stack } from 'expo-router/stack';
 import { StatusBar } from 'expo-status-bar';
+import colors from 'tailwindcss/colors';
 
 // import { StatusBar }
 // Do not work in _layout...
@@ -12,9 +13,9 @@ const Layout = () => {
          screenOptions={{
             headerShown: false,
             headerStyle: {
-            backgroundColor: '#f59e0b',
+            backgroundColor: colors.amber[500],
             },
-            headerTintColor: '#fff',
+            headerTintColor: colors.white,
             headerTitleStyle: {
                fontWeight: 'bold',
             },

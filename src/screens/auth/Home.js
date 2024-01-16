@@ -5,6 +5,7 @@ import { Drawer } from 'expo-router/drawer'
 import { DrawerToggleButton } from '@react-navigation/drawer'
 
 import FeaturedRow from '../../components/profile/FeaturedRow'
+import colors from 'tailwindcss/colors'
 
 const HomeScreen = () => {
   return (
@@ -14,10 +15,9 @@ const HomeScreen = () => {
             headerShown: true,
             headerTitle: 'Control Panel',
             headerTitleAlign: 'center',
-            headerLeft: () => <DrawerToggleButton tintColor='#FFF' />
+            headerLeft: () => <DrawerToggleButton tintColor={colors.white} />
          }}
       />
-
 
       <ScrollView
          className="bg-gray-50"

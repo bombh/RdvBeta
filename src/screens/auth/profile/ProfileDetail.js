@@ -1,9 +1,10 @@
 import { View, Text, Image, ScrollView, Pressable, Dimensions, Button } from 'react-native'
 import React, { useCallback, useLayoutEffect, useMemo, useRef } from 'react'
 import { useLocalSearchParams, useNavigation, useRouter } from 'expo-router'
-import BottomSheet, { BottomSheetBackdrop } from '@gorhom/bottom-sheet/'
+import BottomSheet, { BottomSheetBackdrop, BottomSheetView } from '@gorhom/bottom-sheet/'
 
-import { ChevronLeftIcon, CameraIcon } from 'react-native-heroicons/solid'
+import colors from "tailwindcss/colors"
+import { ChevronLeftIcon, CameraIcon, EnvelopeIcon } from 'react-native-heroicons/solid'
 
 import ButtonChat from '../../../components/profile/common/ButtonChat'
 import ButtonFlash from'../../../components/profile/common/ButtonFlash'
@@ -14,6 +15,9 @@ import Animated, { interpolate, useAnimatedRef, useAnimatedStyle, useScrollViewO
 
 
 const ProfileDetailScreen = () => {
+
+   console.log(typeof colors.black)
+   console.log(colors.blue[500])
    
    const params = useLocalSearchParams()
    const { id, imgUrl, name, age, city } = params;
@@ -30,13 +34,13 @@ const ProfileDetailScreen = () => {
    const snapPoints =useMemo( () => ['60%'], [] )
 
    
-   const refModalMessage = useRef(null)
+   const modalMessageRef = useRef(null)
    
-   const closeModalMessage = () => refModalMessage.current?.close()
-   const openModalMessage = () => refModalMessage.current?.expand()
+   const closeModalMessage = () => modalMessageRef.current?.close()
+   const openModalMessage = () => modalMessageRef.current?.expand()
    
    const renderBackdrop = useCallback(
-      (props) => <BottomSheetBackdrop appearsOnIndex={0} disappearsOnIndex={-1} {...props} />,
+      (props) => <BottomSheetBackdrop appearsOnIndex={0} disappearsOnIndex={-1}  {...props} />,
       []
    )
 
@@ -84,14 +88,14 @@ const ProfileDetailScreen = () => {
                   className="absolute top-12 left-3 bg-black/20 rounded-full w-14 h-14 border border-white/70 flex items-center justify-center active:bg-black active:border-white"
                   onPress={() => navigation.goBack()}
                >
-                     <ChevronLeftIcon size={30} color={"#FFF"} />
+                     <ChevronLeftIcon size={30} color={colors.white} />
                </Pressable>
 
                {/* Picture button */}
                <Pressable
                   className="absolute top-12 right-3 bg-black/20 rounded-full w-14 h-14 border border-white/70 flex items-center justify-center active:bg-black active:border-white"
                >
-                     <CameraIcon size={30} color={"#FFF"} />
+                     <CameraIcon size={30} color={colors.white} />
                </Pressable>
                   
             </View>
@@ -189,23 +193,36 @@ const ProfileDetailScreen = () => {
             </View>
          </Animated.ScrollView>
 
-         <BottomSheet ref={refModalMessage}
+         <BottomSheet ref={modalMessageRef}
             // index={-1}
             snapPoints={snapPoints}
             enablePanDownToClose={true}
             index={-1}
+            keyboardBehavior='extend'
             backdropComponent={renderBackdrop}
             handleIndicatorStyle={{
-               backgroundColor: '#FFF'
+               backgroundColor: colors.white
             }}
             backgroundStyle={{
-               backgroundColor: '#06b6d4'
+               backgroundColor: colors.cyan[500]
             }}
          >
-            <Text>Waoow</Text>
-            <Pressable onPress={closeModalMessage}>
-               <Text>Close</Text>
-            </Pressable>
+            <BottomSheetView>
+               <View className='flex items-center '>
+                  <EnvelopeIcon color={colors.white} size={60} />
+               </View>
+               <Text className='text-center text-white text-xl'>{name}</Text>
+
+               <View className='h-40 bg-white'>
+                  <Pressable onPress={closeModalMessage}>
+                     <Text>Close</Text>
+                  </Pressable>
+               </View>
+
+            </BottomSheetView>
+            
+
+
          </BottomSheet>
       </>
    )

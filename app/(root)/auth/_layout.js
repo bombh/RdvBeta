@@ -3,13 +3,14 @@ import DrawerMenu from '../../../src/components/app/DrawerMenu'
 
 import { HomeIcon, ChatBubbleLeftEllipsisIcon, UserGroupIcon, MagnifyingGlassIcon, EnvelopeIcon, UserIcon, UsersIcon } from 'react-native-heroicons/solid'
 import { StatusBar } from 'expo-status-bar';
+import colors from 'tailwindcss/colors';
 
 const Layout = () => {
    return (
       <>
       <StatusBar style='light' hidden={true} />
+
       <Drawer
-         
          screenOptions={{
             headerShown: false,
             drawerType: 'slide',
@@ -18,14 +19,14 @@ const Layout = () => {
             headerTitleAlign: 'center',
             drawerStyle : {
                width: 260,
-               backgroundColor: '#222',
+               backgroundColor: colors.neutral[900],
             },
             drawerLabelStyle: {
                marginLeft: -20,
             },
-            drawerActiveTintColor: '#FFF',
-            drawerActiveBackgroundColor: '#444',
-            drawerInactiveTintColor: '#AAA',
+            drawerActiveTintColor: colors.white,
+            drawerActiveBackgroundColor: colors.neutral[700],
+            drawerInactiveTintColor: colors.neutral[400],
          }}
 
          drawerContent={ props => <DrawerMenu {...props} /> }

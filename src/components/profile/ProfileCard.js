@@ -32,11 +32,8 @@ const ProfileCard = ({ id, imgUrl, name, age, city }) => {
 
       {/* Icons action */}
       <View className="flex-row justify-evenly -mt-7">
-
-         <ButtonChat />
-         
-         <ButtonFlash />
-         
+         <ButtonChat />   
+         <ButtonFlash />         
       </View>
 
       {/* Infos */}

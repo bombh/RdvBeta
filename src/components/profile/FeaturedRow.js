@@ -3,6 +3,7 @@ import React from 'react'
 import { ChevronRightIcon } from 'react-native-heroicons/solid'
 
 import ProfileCard from './ProfileCard'
+import colors from 'tailwindcss/colors'
 
 const FeaturedRow = ({ id, title, description }) => {
    return (
@@ -10,7 +11,7 @@ const FeaturedRow = ({ id, title, description }) => {
          {/* Title */}
          <View className="flex-row items-center justify-between mb-2">
             <Text className="text-gray-500 text-xl">{title} </Text>
-            <ChevronRightIcon color={"#999"} />
+            <ChevronRightIcon color={colors.gray[500]} />
          </View>
 
          {/* Profile row */}
