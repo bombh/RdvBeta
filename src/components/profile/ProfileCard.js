@@ -2,8 +2,7 @@ import { View, Text, TouchableOpacity, Image, Pressable } from 'react-native'
 import React from 'react'
 import { Stack, useRouter, useNavigation, usePathname } from 'expo-router'
 
-import ButtonChat from './common/ButtonChat'
-import ButtonFlash from './common/ButtonFlash'
+import ButtonPicture from './common/ButtonPicture'
 
 
 const ProfileCard = ({ id, imgUrl, name, age, city }) => {
@@ -20,27 +19,26 @@ const ProfileCard = ({ id, imgUrl, name, age, city }) => {
          })}
       >
       
-      <Image
-         source={{
-            uri: imgUrl,
-         }}
-         className="w-48 h-48 rounded-lg"
-      />
+         <Image
+            source={{
+               uri: imgUrl,
+            }}
+            className="w-48 h-48 rounded-lg"
+         />
 
-      {/* Online status */}
-      <View className="rounded-full border border-white/70 bg-black/50 w-4 h-4 absolute top-2 right-2"></View>
+         {/* Online status */}
+         <View className="rounded-full border border-white/70 bg-black/50 w-4 h-4 absolute top-2 right-2"></View>
 
-      {/* Icons action */}
-      <View className="flex-row justify-evenly -mt-7">
-         <ButtonChat />   
-         <ButtonFlash />         
-      </View>
+         {/* Icons action */}
+         <View className="flex-row justify-evenly -mt-7">
+            <ButtonPicture />      
+         </View>
 
-      {/* Infos */}
-      <View className="px-3 pb-3 -mt-2 w-48">
-         <Text className="text-center text-lg pt-2 uppercase text-gray-400">{name}</Text>
-         <Text numberOfLines={1} className="text-xs text-center text-gray-600"> {age} - {city}</Text>
-      </View>
+         {/* Infos */}
+         <View className="px-3 pb-3 -mt-2 w-48">
+            <Text className="text-center text-lg pt-2 uppercase text-gray-400">{name}</Text>
+            <Text numberOfLines={1} className="text-xs text-center text-gray-600"> {age} - {city}</Text>
+         </View>
 
     </Pressable>
   )
