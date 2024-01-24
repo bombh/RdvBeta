@@ -37,12 +37,12 @@ const ProfileDetailScreen = () => {
    // callbacks
    const handleSheetChanges = useCallback((index) => {
       //console.log('handleSheetChanges', index);
-   }, []);
+   }, [])
 
    const modalMessageRef = useRef(null)
    
    const closeModalMessage = () => modalMessageRef.current?.close()
-   const openModalMessage = () => modalMessageRef.current?.expand()
+   const openModalMessage = () => modalMessageRef.current?.snapToIndex(0)
    
    const renderBackdrop = useCallback(
       (props) => <BottomSheetBackdrop appearsOnIndex={0} disappearsOnIndex={-1}  {...props} />,
