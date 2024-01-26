@@ -1,16 +1,15 @@
 import { View, Text, Image, ScrollView, Pressable, Dimensions, Button, TextInput } from 'react-native'
 import React, { useCallback, useLayoutEffect, useMemo, useRef } from 'react'
 import { useLocalSearchParams, useNavigation, useRouter } from 'expo-router'
-import BottomSheet, { BottomSheetBackdrop, BottomSheetFooter, BottomSheetTextInput, BottomSheetView } from '@gorhom/bottom-sheet/'
 
-import { styled, StyledComponent } from 'nativewind';
-import colors from "tailwindcss/colors"
+import colors from 'tailwindcss/colors'
 import { ChevronLeftIcon, CameraIcon, EnvelopeIcon } from 'react-native-heroicons/solid'
 
 import ButtonChat from '../../../components/profile/common/ButtonChat'
 import ButtonFlash from'../../../components/profile/common/ButtonFlash'
 import ButtonMicro from'../../../components/profile/common/ButtonMicro'
 import ButtonPlus from'../../../components/profile/common/ButtonPlus'
+import ModalMessage from '../../../components/profile/common/ModalMessage'
 
 import Animated, { interpolate, useAnimatedRef, useAnimatedStyle, useScrollViewOffset } from 'react-native-reanimated'
 
@@ -30,35 +29,11 @@ const ProfileDetailScreen = () => {
       })
    }, [])
    
-   // Bottomsheet
-   const StyledBottomSheetTextInput = styled(BottomSheetTextInput)
-   const snapPoints = useMemo( () => ['50%', '90%'], [] )
-
-   // callbacks
-   const handleSheetChanges = useCallback((index) => {
-      //console.log('handleSheetChanges', index);
-   }, [])
-
+   // Modal Message
    const modalMessageRef = useRef(null)
-   
-   const closeModalMessage = () => modalMessageRef.current?.close()
    const openModalMessage = () => modalMessageRef.current?.snapToIndex(0)
    
-   const renderBackdrop = useCallback(
-      (props) => <BottomSheetBackdrop appearsOnIndex={0} disappearsOnIndex={-1}  {...props} />,
-      []
-   )
-
-   const renderFooter = useCallback(
-      (props) => (
-         <BottomSheetFooter bottomInset={32} {...props}>
-            <View className='flex items-center justify-center py-3'>
-               <ButtonChat />
-            </View>
-         </BottomSheetFooter>
-      ),
-      []
-   )
+   
    // Parallax Effect
    const { width } = Dimensions.get("window")
    const scrollRef = useAnimatedRef()
@@ -208,39 +183,10 @@ const ProfileDetailScreen = () => {
             </View>
          </Animated.ScrollView>
 
-         <BottomSheet ref={modalMessageRef}
-            snapPoints={snapPoints}
-            enablePanDownToClose={true}
-            index={-1}
-            keyboardBehavior='extend'
-            onChange={handleSheetChanges}
-            backdropComponent={renderBackdrop}
-            footerComponent={renderFooter}
-            handleIndicatorStyle={{
-               backgroundColor: colors.cyan[200]
-            }}
-            backgroundStyle={{
-               backgroundColor: colors.cyan[500]
-            }}
-         >
-            <BottomSheetView>
-               <View className='flex items-center my-5'>
-                  <View className='w-24 h-24 rounded-full border border-cyan-200 overflow-hidden'>
-                     <Image source={{ uri: 'https://cdn-devfr-img02.rendez-vous.be/photos/RV_BEFR_thumbs/P_1530337_1_231781.jpg' }} className='w-full h-full' />
-                  </View>
-                  <Text className='text-white text-xl'>{name}</Text>
-               </View>
-
-               <StyledBottomSheetTextInput
-                  placeholder={`Votre message à ${name}`}
-                  placeholderTextColor={colors.white}
-                  maxLength={200}
-                  multiline={true}
-                  className='text-cyan-800 bg-cyan-400 focus:bg-cyan-200 m-5 px-3 py-2 rounded-lg'
-               />
-            </BottomSheetView>
-
-         </BottomSheet>
+         <ModalMessage
+            ref={modalMessageRef}
+            name={name}
+         />
       </>
    )
 }

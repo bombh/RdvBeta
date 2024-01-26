@@ -9,7 +9,7 @@ const App = () => {
    //    return <Redirect href="/(auth)/home" />
    // }
 
-   return <Redirect href="/chooseLanguage" />
+   return <Redirect href="/auth/home" />
 }
 
 export default App
