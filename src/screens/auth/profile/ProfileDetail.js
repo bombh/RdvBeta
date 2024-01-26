@@ -209,7 +209,6 @@ const ProfileDetailScreen = () => {
          </Animated.ScrollView>
 
          <BottomSheet ref={modalMessageRef}
-            // index={-1}
             snapPoints={snapPoints}
             enablePanDownToClose={true}
             index={-1}
