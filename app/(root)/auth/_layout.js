@@ -4,6 +4,7 @@ import DrawerMenu from '../../../src/components/app/DrawerMenu'
 import { HomeIcon, ChatBubbleLeftEllipsisIcon, UserGroupIcon, MagnifyingGlassIcon, EnvelopeIcon, UserIcon, UsersIcon } from 'react-native-heroicons/solid'
 import { StatusBar } from 'expo-status-bar';
 import colors from 'tailwindcss/colors';
+import Toast from 'react-native-toast-message';
 
 const Layout = () => {
    return (
@@ -92,9 +93,9 @@ const Layout = () => {
             }}
          />
 
-         
-         
       </Drawer>
+
+      <Toast />
       </>
    );
 }

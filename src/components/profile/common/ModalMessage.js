@@ -6,6 +6,7 @@ import colors from 'tailwindcss/colors'
 import ButtonChat from '../../../components/profile/common/ButtonChat'
 
 import BottomSheet, { BottomSheetBackdrop, BottomSheetFooter, BottomSheetTextInput, BottomSheetView } from '@gorhom/bottom-sheet/'
+import Toast from 'react-native-toast-message'
 
 const ModalMessage = forwardRef( (props, ref) => {
 
@@ -13,8 +14,13 @@ const ModalMessage = forwardRef( (props, ref) => {
    const snapPoints = useMemo( () => ['50%', '100%'], [] )
 
    const name = props.name
-   const closeModal = () => {
+   const sendMessage = () => {
       ref.current?.close()
+      Toast.show({
+         type: 'success',
+         text1: `Votre message a été envoyé à ${name}`,
+         topOffset: 70,
+       });
    }
 
    // callbacks
@@ -35,7 +41,7 @@ const ModalMessage = forwardRef( (props, ref) => {
       (props) => (
          <BottomSheetFooter bottomInset={32} {...props}>
             <View className='flex items-center justify-center py-3'>
-               <ButtonChat onPress={closeModal} />
+               <ButtonChat onPress={sendMessage} />
             </View>
          </BottomSheetFooter>
       ),
