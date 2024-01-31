@@ -15,9 +15,14 @@ const ModalMessage = forwardRef( (props, ref) => {
    const name = props.name
    const closeModal = () => {
       ref.current?.close()
-      Keyboard.dismiss()
    }
 
+   // callbacks
+   const handleSheetChanges = useCallback((index) => {
+      if(index === -1) {
+         Keyboard.dismiss()
+      }
+   }, [])
 
    //BottomSheetBackdrop
    const renderBackdrop = useCallback(
@@ -43,6 +48,7 @@ const ModalMessage = forwardRef( (props, ref) => {
             enablePanDownToClose={true}
             index={-1}
             keyboardBehavior='extend'
+            onChange={handleSheetChanges}
             backdropComponent={renderBackdrop}
             footerComponent={renderFooter}
             handleIndicatorStyle={{
@@ -54,7 +60,7 @@ const ModalMessage = forwardRef( (props, ref) => {
          >
             <BottomSheetView>
                <View className='flex items-center my-5'>
-                  <View className='w-28 h-28 rounded-full border border-cyan-200 overflow-hidden mt-2'>
+                  <View className='w-28 h-28 rounded-full border border-cyan-200 overflow-hidden mt-3'>
                      <Image source={{ uri: 'https://cdn-devfr-img02.rendez-vous.be/photos/RV_BEFR_thumbs/P_1530337_1_231781.jpg' }} className='w-full h-full' />
                   </View>
                   <Text className='text-white text-xl'>{name}</Text>
