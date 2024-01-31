@@ -12,6 +12,7 @@ import ButtonPlus from'../../../components/profile/common/ButtonPlus'
 import ModalMessage from '../../../components/profile/common/ModalMessage'
 
 import Animated, { interpolate, useAnimatedRef, useAnimatedStyle, useScrollViewOffset } from 'react-native-reanimated'
+import Toast from 'react-native-toast-message'
 
 
 const ProfileDetailScreen = () => {
@@ -28,7 +29,14 @@ const ProfileDetailScreen = () => {
          headerShown: false,
       })
    }, [])
-   
+
+   // Flash
+   const flashProfile = () => Toast.show({
+      type: 'success',
+      text1: `Vous avez flashé sur ${name}`,
+      topOffset: 70,
+    });
+
    // Modal Message
    const modalMessageRef = useRef(null)
    const openModalMessage = () => modalMessageRef.current?.snapToIndex(0)
@@ -95,7 +103,7 @@ const ProfileDetailScreen = () => {
 
                   <ButtonChat onPress={openModalMessage} />
                   <ButtonMicro />
-                  <ButtonFlash />
+                  <ButtonFlash onPress={flashProfile} />
                   <ButtonPlus />
 
             </View>

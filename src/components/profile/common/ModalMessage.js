@@ -45,7 +45,7 @@ const ModalMessage = forwardRef( (props, ref) => {
             </View>
          </BottomSheetFooter>
       ),
-      []
+      [ref]
    )
 
    return (
