@@ -17,7 +17,7 @@ const ModalMessage = forwardRef( (props, ref) => {
    const sendMessage = () => {
       ref.current?.close()
       Toast.show({
-         type: 'success',
+         type: 'info',
          text1: `Votre message a été envoyé à ${name}`,
          topOffset: 70,
        });

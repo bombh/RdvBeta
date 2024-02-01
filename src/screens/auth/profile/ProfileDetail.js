@@ -32,7 +32,7 @@ const ProfileDetailScreen = () => {
 
    // Flash
    const flashProfile = () => Toast.show({
-      type: 'success',
+      type: 'info',
       text1: `Vous avez flashé sur ${name}`,
       topOffset: 70,
     });
