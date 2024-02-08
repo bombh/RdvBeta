@@ -5,7 +5,7 @@ import { Stack, useRouter, useNavigation, usePathname } from 'expo-router'
 import ButtonPicture from './common/ButtonPicture'
 
 
-const ProfileCard = ({ id, imgUrl, name, age, city }) => {
+const ProfileCard = ({ id, picture, thumb, name, age, city }) => {
    const router = useRouter()
    const pathname = usePathname()
 
@@ -15,13 +15,13 @@ const ProfileCard = ({ id, imgUrl, name, age, city }) => {
          onPress={ () => router.push({
             //pathname: `/auth/people/${id}`,
             pathname: `${pathname}/detail`,
-            params: { id, imgUrl, name, age, city }
+            params: { id, picture, name, age, city }
          })}
       >
       
          <Image
             source={{
-               uri: imgUrl,
+               uri: thumb,
             }}
             className="w-48 h-48 rounded-lg"
          />

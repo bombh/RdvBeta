@@ -20,7 +20,7 @@ const ProfileDetailScreen = () => {
    //console.log(tw('bg-white'))
    
    const params = useLocalSearchParams()
-   const { id, imgUrl, name, age, city } = params;
+   const { id, picture, name, age, city } = params;
 
    // Navigation
    const navigation = useNavigation()
@@ -41,7 +41,7 @@ const ProfileDetailScreen = () => {
    const modalMessageRef = useRef(null)
    const openModalMessage = () => modalMessageRef.current?.snapToIndex(0)
    
-   
+    
    // Parallax Effect
    const { width } = Dimensions.get("window")
    const scrollRef = useAnimatedRef()
@@ -75,7 +75,7 @@ const ProfileDetailScreen = () => {
             <View className="relative">
                <Animated.Image
                   source={{
-                     uri: imgUrl,
+                     uri: picture,
                   }}
                   className="w-full aspect-square rounded-b-2xl"
                   style={imageAnimatedStyle}

@@ -1,21 +1,39 @@
-import { View, Text, ScrollView } from 'react-native'
+import { View, Text, ScrollView, FlatList } from 'react-native'
 import React from 'react'
 import { ChevronRightIcon } from 'react-native-heroicons/solid'
 
 import ProfileCard from './ProfileCard'
+import useFetch from '../../hook/apiRdv'
 import colors from 'tailwindcss/colors'
 
 const FeaturedRow = ({ id, title, description }) => {
+
+   // Fetch API
+   const { data, isLoading, error } = useFetch(
+      'GET',
+      'getProfileList',
+      { }
+   )
+
    return (
       <View className="mt-2 px-2">
+         
          {/* Title */}
          <View className="flex-row items-center justify-between mb-2">
             <Text className="text-gray-500 text-xl">{title} </Text>
             <ChevronRightIcon color={colors.gray[500]} />
          </View>
 
+         <FlatList
+            data={data}
+            renderItem={ ({ item }) => <ProfileCard {...item} />}
+            keyExtractor={item => item.id}
+            contentContainerStyle={{ columnGap: 10}}
+            horizontal
+         /> 
+
          {/* Profile row */}
-         <ScrollView
+         {/* <ScrollView
             horizontal
             contentContainerStyle={{
                columnGap: 10
@@ -24,7 +42,6 @@ const FeaturedRow = ({ id, title, description }) => {
             className="pb-5"
          >
 
-            {/* ProfileCard */}
             <ProfileCard
                id={1}
                imgUrl="https://cdn-devfr-img02.rendez-vous.be/photos/RV_BEFR_thumbs/P_1537812_1_991640.jpg"
@@ -59,7 +76,7 @@ const FeaturedRow = ({ id, title, description }) => {
 
 
 
-         </ScrollView>
+         </ScrollView> */}
       </View>
   )
 }
