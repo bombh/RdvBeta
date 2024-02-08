@@ -8,12 +8,11 @@ import ButtonChat from '../../../components/profile/common/ButtonChat'
 import BottomSheet, { BottomSheetBackdrop, BottomSheetFooter, BottomSheetTextInput, BottomSheetView } from '@gorhom/bottom-sheet/'
 import Toast from 'react-native-toast-message'
 
-const ModalMessage = forwardRef( (props, ref) => {
+const ModalMessage = forwardRef( ( { name }, ref) => {
 
    const StyledBottomSheetTextInput = styled(BottomSheetTextInput)
    const snapPoints = useMemo( () => ['50%', '100%'], [] )
 
-   const name = props.name
    const sendMessage = () => {
       ref.current?.close()
       Toast.show({
