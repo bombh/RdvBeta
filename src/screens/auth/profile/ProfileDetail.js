@@ -13,14 +13,22 @@ import ModalMessage from '../../../components/profile/common/ModalMessage'
 
 import Animated, { interpolate, useAnimatedRef, useAnimatedStyle, useScrollViewOffset } from 'react-native-reanimated'
 import Toast from 'react-native-toast-message'
+import useFetch from '../../../hook/apiRdv'
 
 
 const ProfileDetailScreen = () => {
-
-   //console.log(tw('bg-white'))
    
    const params = useLocalSearchParams()
-   const { id, picture, name, age, city } = params;
+   const { id, picture, thumb, name, age, city } = params;
+
+   // Fetch API
+   const { data, isLoading, error } = useFetch(
+      'GET',
+      'getProfileDetail',
+      { 
+         idprofile: id
+      }
+   )
 
    // Navigation
    const navigation = useNavigation()
@@ -35,7 +43,7 @@ const ProfileDetailScreen = () => {
       type: 'info',
       text1: `Vous avez flashé sur ${name}`,
       topOffset: 70,
-    });
+    }); 
 
    // Modal Message
    const modalMessageRef = useRef(null)
@@ -194,6 +202,7 @@ const ProfileDetailScreen = () => {
          <ModalMessage
             ref={modalMessageRef}
             name={name}
+            picture={thumb}
          />
       </>
    )

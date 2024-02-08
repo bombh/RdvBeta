@@ -8,7 +8,7 @@ import ButtonChat from '../../../components/profile/common/ButtonChat'
 import BottomSheet, { BottomSheetBackdrop, BottomSheetFooter, BottomSheetTextInput, BottomSheetView } from '@gorhom/bottom-sheet/'
 import Toast from 'react-native-toast-message'
 
-const ModalMessage = forwardRef( ( { name }, ref) => {
+const ModalMessage = forwardRef( ( { name, picture }, ref) => {
 
    const StyledBottomSheetTextInput = styled(BottomSheetTextInput)
    const snapPoints = useMemo( () => ['50%', '100%'], [] )
@@ -66,7 +66,7 @@ const ModalMessage = forwardRef( ( { name }, ref) => {
             <BottomSheetView>
                <View className='flex items-center my-5'>
                   <View className='w-28 h-28 rounded-full border border-cyan-200 overflow-hidden mt-3'>
-                     <Image source={{ uri: 'https://cdn-devfr-img02.rendez-vous.be/photos/RV_BEFR_thumbs/P_1530337_1_231781.jpg' }} className='w-full h-full' />
+                     <Image source={{ uri: picture }} className='w-full h-full' />
                   </View>
                   <Text className='text-white text-xl'>{name}</Text>
                </View>

@@ -31,7 +31,6 @@ const useFetch = (method, endpoint, query) => {
          
          try {
             const response = await axios.request(options)
-            console.log(response.data.profile, process.env.NODE_ENV)
             setData(response.data.profile)
             setIsLoading(false)
    

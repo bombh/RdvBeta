@@ -2,8 +2,8 @@ import { Pressable, Text, View } from 'react-native'
 import colors from 'tailwindcss/colors'
 import { CameraIcon } from 'react-native-heroicons/solid'
 
-const ButtonPicture = ( {onPress }) => {
-
+const ButtonPicture = ({ total }) => {
+   
    return (
       <View className="bg-white rounded-full w-12 h-12 border border-neutral-300 flex items-center justify-center">
          
@@ -11,7 +11,7 @@ const ButtonPicture = ( {onPress }) => {
 
          {/* Num picture */}
          <View className="flex items-center justify-center rounded-full bg-amber-500 h-5 absolute -top-1 left-8 px-2">
-            <Text className='text-white'>4</Text>
+            <Text className='text-white'>{total}</Text>
          </View>
 
       </View>
