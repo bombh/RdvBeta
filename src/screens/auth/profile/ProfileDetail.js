@@ -30,6 +30,7 @@ const ProfileDetailScreen = () => {
       }
    )
 
+
    // Navigation
    const navigation = useNavigation()
    useLayoutEffect(() => {
@@ -128,7 +129,9 @@ const ProfileDetailScreen = () => {
                </View>
 
                <View className="px-6">
-                  <Text className="text-lg text-justify leading-6 text-gray-400">Je suis une personne très gentille et je cherche à rencontrer des gens sympas. Je suis une personne très gentille et je cherche à rencontrer des gens sympas</Text>
+                  <Text className="text-lg text-justify leading-6 text-gray-400">
+                     {data.profile.COMMENTAIRE}
+                  </Text>
                </View>
 
                <View className="mt-6 mb-3 p-2 bg-cyan-500">
@@ -137,12 +140,12 @@ const ProfileDetailScreen = () => {
 
                <View className="px-6 pb-3">
                   <Text className="text-xs text-amber-500">Je suis</Text>
-                  <Text className="">une femme</Text>
+                  <Text className="">{data.profile.PEOPLETYPE}</Text>
                </View>
 
                <View className="px-6 pb-3">
                   <Text className="text-xs text-amber-500">Je cherche</Text>
-                  <Text className="">une homme</Text>
+                  <Text className="">{data.profile.PREFPEOPLETYPE}</Text>
                </View>
                <View className="px-6 pb-3">
                   <Text className="text-xs text-amber-500">Personnalité</Text>

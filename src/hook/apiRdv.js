@@ -31,7 +31,9 @@ const useFetch = (method, endpoint, query) => {
          
          try {
             const response = await axios.request(options)
-            setData(response.data.profile)
+            setData(response.data)
+            //console.log(endpoint, '>>>>>>>>\n', response.data.profile.COMMENTAIRE)
+            
             setIsLoading(false)
    
          } catch (error) {

@@ -4,8 +4,7 @@ import { Stack, useRouter, useNavigation, usePathname } from 'expo-router'
 
 import ButtonPicture from './common/ButtonPicture'
 
-
-const ProfileCard = ({ id, name, age, city, picture, thumb, pictureTotal }) => {
+const ProfileCard = ( props ) => {
    const router = useRouter()
    const pathname = usePathname()
 
@@ -15,13 +14,13 @@ const ProfileCard = ({ id, name, age, city, picture, thumb, pictureTotal }) => {
          onPress={ () => router.push({
             //pathname: `/auth/people/${id}`,
             pathname: `${pathname}/detail`,
-            params: { id, picture, thumb, pictureTotal, name, age, city }
+            params: { ...props }
          })}
       >
       
          <Image
             source={{
-               uri: thumb,
+               uri: props.thumb,
             }}
             className="w-48 h-48 rounded-lg"
          />
@@ -31,13 +30,13 @@ const ProfileCard = ({ id, name, age, city, picture, thumb, pictureTotal }) => {
 
          {/* Icons action */}
          <View className="flex-row justify-evenly -mt-7">
-            <ButtonPicture total={pictureTotal} />      
+            <ButtonPicture total={props.pictureTotal} />      
          </View>
 
          {/* Infos */}
          <View className="px-3 pb-3 -mt-2 w-48">
-            <Text className="text-center text-lg pt-2 uppercase text-gray-400">{name}</Text>
-            <Text numberOfLines={1} className="text-xs text-center text-gray-600"> {age} - {city}</Text>
+            <Text className="text-center text-lg pt-2 uppercase text-gray-400">{props.name}</Text>
+            <Text numberOfLines={1} className="text-xs text-center text-gray-600"> {props.age} - {props.city}</Text>
          </View>
 
     </Pressable>

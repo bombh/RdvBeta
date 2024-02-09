@@ -26,7 +26,7 @@ const FeaturedRow = ({ id, title, description }) => {
 
          {/* Profile row */}
          <FlatList
-            data={data}
+            data={data.profile}
             renderItem={ ({ item }) => <ProfileCard {...item} />}
             keyExtractor={item => item.id}
             contentContainerStyle={{ columnGap: 10}} 
