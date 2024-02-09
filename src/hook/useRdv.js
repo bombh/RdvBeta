@@ -9,7 +9,7 @@ const baseUrl = 'https://devfr.rendez-vous.be/scripts/api/v3_react/mobile.cfc'
 // method: 'GET | POST | PUT | DELETE'
 // endpoint: mobile.cfc method
 // query: endpoint params
-const useFetch = (method, endpoint, query) => {
+const useRdv = (method, endpoint, query) => {
    
       const [data, setData] = useState([])
       const [isLoading, setIsLoading] = useState(false)
@@ -56,4 +56,4 @@ const useFetch = (method, endpoint, query) => {
       return { data, isLoading, error, refetch };
 }
 
-export default useFetch
+export default useRdv

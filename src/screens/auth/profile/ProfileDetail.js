@@ -13,7 +13,7 @@ import ModalMessage from '../../../components/profile/common/ModalMessage'
 
 import Animated, { interpolate, useAnimatedRef, useAnimatedStyle, useScrollViewOffset } from 'react-native-reanimated'
 import Toast from 'react-native-toast-message'
-import useFetch from '../../../hook/apiRdv'
+import useRdv from '../../../hook/useRdv'
 
 
 const ProfileDetailScreen = () => {
@@ -22,7 +22,7 @@ const ProfileDetailScreen = () => {
    const { id, picture, thumb, name, age, city, pictureTotal } = params;
 
    // Fetch API
-   const { data, isLoading, error } = useFetch(
+   const { data, isLoading, error } = useRdv(
       'GET',
       'getProfileDetail',
       { 

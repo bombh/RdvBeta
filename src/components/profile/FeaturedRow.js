@@ -3,13 +3,13 @@ import React from 'react'
 import { ChevronRightIcon } from 'react-native-heroicons/solid'
 
 import ProfileCard from './ProfileCard'
-import useFetch from '../../hook/apiRdv'
+import useRdv from '../../hook/useRdv'
 import colors from 'tailwindcss/colors'
 
 const FeaturedRow = ({ id, title, description }) => {
 
    // Fetch API
-   const { data, isLoading, error } = useFetch(
+   const { data, isLoading, error } = useRdv(
       'GET',
       'getProfileList',
       { }
