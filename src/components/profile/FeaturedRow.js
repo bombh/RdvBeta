@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, FlatList } from 'react-native'
+import { View, Text, ScrollView, FlatList, ActivityIndicator } from 'react-native'
 import React from 'react'
 import { ChevronRightIcon } from 'react-native-heroicons/solid'
 
@@ -24,15 +24,21 @@ const FeaturedRow = ({ id, title, description }) => {
             <ChevronRightIcon color={colors.gray[500]} />
          </View>
 
-         {/* Profile row */}
-         <FlatList
-            data={data.profile}
-            renderItem={ ({ item }) => <ProfileCard {...item} />}
-            keyExtractor={item => item.id}
-            contentContainerStyle={{ columnGap: 10}} 
-            horizontal
-         /> 
-
+         <View className='flex justify-center items-center h-72'>
+            {/* Profile row */}
+            { isLoading ? (
+                  <ActivityIndicator className='' size="large" color={colors.amber[500]} /> 
+               ) : (
+                  <FlatList
+                     data={data.profile}
+                     renderItem={ ({ item }) => <ProfileCard {...item} />}
+                     keyExtractor={item => item.id}
+                     contentContainerStyle={{ columnGap: 10}}
+                     horizontal
+                  />
+               )
+            }
+         </View>
       </View>
   )
 }

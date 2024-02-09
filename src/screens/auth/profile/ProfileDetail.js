@@ -19,7 +19,7 @@ import useFetch from '../../../hook/apiRdv'
 const ProfileDetailScreen = () => {
    
    const params = useLocalSearchParams()
-   const { id, picture, thumb, name, age, city } = params;
+   const { id, picture, thumb, name, age, city, pictureTotal } = params;
 
    // Fetch API
    const { data, isLoading, error } = useFetch(
@@ -130,7 +130,7 @@ const ProfileDetailScreen = () => {
 
                <View className="px-6">
                   <Text className="text-lg text-justify leading-6 text-gray-400">
-                     {data.profile.COMMENTAIRE}
+                     {data.profile?.COMMENTAIRE}
                   </Text>
                </View>
 
@@ -140,12 +140,12 @@ const ProfileDetailScreen = () => {
 
                <View className="px-6 pb-3">
                   <Text className="text-xs text-amber-500">Je suis</Text>
-                  <Text className="">{data.profile.PEOPLETYPE}</Text>
+                  <Text className="">{data.profile?.PEOPLETYPE}</Text>
                </View>
 
                <View className="px-6 pb-3">
                   <Text className="text-xs text-amber-500">Je cherche</Text>
-                  <Text className="">{data.profile.PREFPEOPLETYPE}</Text>
+                  <Text className="">{data.profile?.PREFPEOPLETYPE}</Text>
                </View>
                <View className="px-6 pb-3">
                   <Text className="text-xs text-amber-500">Personnalité</Text>

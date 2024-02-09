@@ -32,13 +32,13 @@ const useFetch = (method, endpoint, query) => {
          try {
             const response = await axios.request(options)
             setData(response.data)
-            //console.log(endpoint, '>>>>>>>>\n', response.data.profile.COMMENTAIRE)
+            console.log(endpoint, '\n', options, '\n', response.data.profile)
             
             setIsLoading(false)
    
          } catch (error) {
             setError(error)
-            console.log('RAPIDAPI in useFetch', error)
+            //console.log('RAPIDAPI in useFetch', error)
          } finally {
             setIsLoading(false)
          }
