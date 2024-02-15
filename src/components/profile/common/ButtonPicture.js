@@ -5,7 +5,7 @@ import { CameraIcon } from 'react-native-heroicons/solid'
 const ButtonPicture = ({ total }) => {
    
    return (
-      <View className="bg-white rounded-full w-12 h-12 border border-neutral-300 flex items-center justify-center">
+      <View className="bg-white relative rounded-full w-12 h-12 border border-neutral-300 flex items-center justify-center">
          
          <CameraIcon size={30} color={colors.neutral[500]} />
 

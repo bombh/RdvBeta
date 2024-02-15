@@ -38,7 +38,7 @@ const ProfileCard = ( { id, name, age, city, pictureTotal, thumb, picture } ) =>
          <View className="px-3 pb-3 -mt-2 w-48">
             <Text className="text-center text-lg pt-2 uppercase text-gray-400">{name}</Text>
             <Text numberOfLines={1} className="text-xs text-center text-gray-600"> {age} ans - {city}</Text>
-            <Text numberOfLines={1} className="text-xs text-center text-amber-500">#randonnées #ski #funk</Text>
+            <Text numberOfLines={1} className="text-xs text-center text-amber-500 pt-1">#randonnées #ski #funk</Text>
          </View>
 
     </Pressable>

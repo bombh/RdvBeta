@@ -1,15 +1,13 @@
 import { View, Text, Image, ScrollView, Pressable, Dimensions, Button, TextInput } from 'react-native'
-import React, { useCallback, useLayoutEffect, useMemo, useRef } from 'react'
-import { useLocalSearchParams, useNavigation, useRouter } from 'expo-router'
+import React, { useLayoutEffect, useRef } from 'react'
+import { useLocalSearchParams, useNavigation } from 'expo-router'
 
 import colors from 'tailwindcss/colors'
 import { ChevronLeftIcon, CameraIcon, EnvelopeIcon } from 'react-native-heroicons/solid'
 
-import ButtonChat from '../../../components/profile/common/ButtonChat'
-import ButtonFlash from'../../../components/profile/common/ButtonFlash'
-import ButtonMicro from'../../../components/profile/common/ButtonMicro'
-import ButtonPlus from'../../../components/profile/common/ButtonPlus'
-import ModalMessage from '../../../components/profile/common/ModalMessage'
+import { ButtonChat, ButtonFlash, ButtonMicro, ButtonPlus, ModalMessage } from '../../../components/profile/common/'
+
+// import ModalMessage from '../../../components/profile/common/ModalMessage'
 
 import Animated, { interpolate, useAnimatedRef, useAnimatedStyle, useScrollViewOffset } from 'react-native-reanimated'
 import Toast from 'react-native-toast-message'
@@ -103,6 +101,10 @@ const ProfileDetailScreen = () => {
                   className="absolute top-14 right-3 bg-black/20 rounded-full w-14 h-14 border border-white/70 flex items-center justify-center active:bg-black active:border-white"
                >
                      <CameraIcon size={30} color={colors.white} />
+                     {/* Num picture */}
+                     <View className="flex items-center justify-center rounded-full bg-amber-500 h-5 absolute -top-1 left-8 px-2">
+                        <Text className='text-white'>{pictureTotal}</Text>
+                     </View>
                </Pressable>
                   
             </View>
