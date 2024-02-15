@@ -110,15 +110,18 @@ const ProfileDetailScreen = () => {
                </Pressable>
 
                {/* Picture button */}
-               <Pressable
-                  className="absolute top-14 right-3 bg-black/20 rounded-full w-14 h-14 border border-white/70 flex items-center justify-center active:bg-black active:border-white"
-               >
-                     <CameraIcon size={30} color={colors.white} />
-                     {/* Num picture */}
-                     <View className="flex items-center justify-center rounded-full bg-amber-500 h-5 absolute -top-1 left-8 px-2">
-                        <Text className='text-white'>{pictureTotal}</Text>
-                     </View>
-               </Pressable>
+               { pictureTotal > 0 
+                  ?  <Pressable
+                        className="absolute top-14 right-3 bg-black/20 rounded-full w-14 h-14 border border-white/70 flex items-center justify-center active:bg-black active:border-white"
+                     >
+                           <CameraIcon size={30} color={colors.white} />
+                           {/* Num picture */}
+                           <View className="flex items-center justify-center rounded-full bg-amber-500 h-5 absolute -top-1 left-8 px-2">
+                              <Text className='text-white'>{pictureTotal}</Text>
+                           </View>
+                     </Pressable>
+                  : null
+               }
                   
             </View>
 

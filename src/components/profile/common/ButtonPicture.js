@@ -10,9 +10,12 @@ const ButtonPicture = ({ total }) => {
          <CameraIcon size={30} color={colors.neutral[500]} />
 
          {/* Num picture */}
-         <View className="flex items-center justify-center rounded-full bg-amber-500 h-5 absolute -top-1 left-8 px-2">
-            <Text className='text-white'>{total}</Text>
-         </View>
+         { total > 0
+            ? <View className="flex items-center justify-center rounded-full bg-amber-500 h-5 absolute -top-1 left-8 px-2">
+               <Text className='text-white'>{total}</Text>
+            </View>
+            : null
+         }
 
       </View>
    )
