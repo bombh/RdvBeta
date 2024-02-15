@@ -2,8 +2,8 @@ import React from 'react'
 import { View, Text, TouchableOpacity, Pressable } from 'react-native'
 import { Image } from 'expo-image'
 import { Stack, useRouter, useNavigation, usePathname } from 'expo-router'
-import { SvgUri } from 'react-native-svg'
 
+import { Man, Woman } from '../../constants/image'
 import ButtonPicture from './common/ButtonPicture'
 
 const ProfileCard = ( { id, name, age, city, pictureTotal, thumb, picture } ) => {
@@ -25,7 +25,7 @@ const ProfileCard = ( { id, name, age, city, pictureTotal, thumb, picture } ) =>
                uri: thumb,
             }}
             className="w-48 h-48 rounded-lg bg-gray-200"
-            placeholder={{ uri: 'https://devfr.rendez-vous.be/app/img/holder-man2.svg' }}
+            placeholder={Woman}
             placeholderContentFit='cover'
             transition={500}
          />
