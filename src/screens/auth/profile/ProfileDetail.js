@@ -1,9 +1,11 @@
-import { View, Text, Image, ScrollView, Pressable, Dimensions, Button, TextInput } from 'react-native'
+import { View, Text, ScrollView, Pressable, Dimensions, Button, TextInput } from 'react-native'
+import { Image } from 'expo-image'
 import React, { useLayoutEffect, useRef } from 'react'
 import { useLocalSearchParams, useNavigation } from 'expo-router'
 
 import colors from 'tailwindcss/colors'
 import { ChevronLeftIcon, CameraIcon, EnvelopeIcon } from 'react-native-heroicons/solid'
+import { Man, Woman } from '../../../constants/image'
 
 import { ButtonChat, ButtonFlash, ButtonMicro, ButtonPlus, ModalMessage } from '../../../components/profile/common/'
 
@@ -17,7 +19,14 @@ import useRdv from '../../../hook/useRdv'
 const ProfileDetailScreen = () => {
    
    const params = useLocalSearchParams()
-   const { id, picture, thumb, name, age, city, pictureTotal } = params;
+   const { id, picture, thumb, name, age, type, city, pictureTotal } = params;
+
+   let placeholder
+   if( type === 'Man' ) {
+      placeholder = Man
+   } else {
+      placeholder = Woman
+   }
 
    // Fetch API
    const { data, isLoading, error } = useRdv(
@@ -27,7 +36,6 @@ const ProfileDetailScreen = () => {
          idprofile: id
       }
    )
-
 
    // Navigation
    const navigation = useNavigation()
@@ -80,13 +88,18 @@ const ProfileDetailScreen = () => {
          >
             
             <View className="relative">
-               <Animated.Image
-                  source={{
-                     uri: picture,
-                  }}
-                  className="w-full aspect-square rounded-b-2xl"
-                  style={imageAnimatedStyle}
-               />
+               <Animated.View style={imageAnimatedStyle}>
+                  <Image
+                     source={{
+                        uri: picture,
+                     }}
+                     className="w-full aspect-square rounded-b-2xl bg-gray-200"
+                     placeholder={placeholder}
+                     placeholderContentFit='cover'
+                     transition={500}
+                  />
+               </Animated.View>
+               
                
                {/* Back button */}
                <Pressable

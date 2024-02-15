@@ -15,7 +15,6 @@ const ProfileCard = ( { id, name, age, city, type, pictureTotal, thumb, picture 
       placeholder = Man
    } else {
       placeholder = Woman
-      console.log('type', type)
    }
 
    return (
@@ -24,7 +23,7 @@ const ProfileCard = ( { id, name, age, city, type, pictureTotal, thumb, picture 
          onPress={ () => router.push({
             //pathname: `/auth/people/${id}`,
             pathname: `${pathname}/detail`,
-            params: { id, name, age, city, pictureTotal, thumb, picture }
+            params: { id, name, age, city, type, pictureTotal, thumb, picture }
          })}
       >
       
