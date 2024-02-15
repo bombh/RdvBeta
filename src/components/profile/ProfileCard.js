@@ -6,9 +6,17 @@ import { Stack, useRouter, useNavigation, usePathname } from 'expo-router'
 import { Man, Woman } from '../../constants/image'
 import ButtonPicture from './common/ButtonPicture'
 
-const ProfileCard = ( { id, name, age, city, pictureTotal, thumb, picture } ) => {
+const ProfileCard = ( { id, name, age, city, type, pictureTotal, thumb, picture } ) => {
    const router = useRouter()
    const pathname = usePathname()
+
+   let placeholder
+   if( type === 'Man' ) {
+      placeholder = Man
+   } else {
+      placeholder = Woman
+      console.log('type', type)
+   }
 
    return (
       <Pressable
@@ -25,7 +33,7 @@ const ProfileCard = ( { id, name, age, city, pictureTotal, thumb, picture } ) =>
                uri: thumb,
             }}
             className="w-48 h-48 rounded-lg bg-gray-200"
-            placeholder={Woman}
+            placeholder={placeholder}
             placeholderContentFit='cover'
             transition={500}
          />
