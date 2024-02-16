@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Pressable } from 'react-native'
 import { Image } from 'expo-image'
 import { Stack, useRouter, useNavigation, usePathname } from 'expo-router'
 
-import { Man, Woman } from '../../constants/image'
+import { Man, Woman } from '@/src/constants/image'
 import ButtonPicture from './common/ButtonPicture'
 
 const ProfileCard = ( { id, name, age, city, type, pictureTotal, thumb, picture } ) => {

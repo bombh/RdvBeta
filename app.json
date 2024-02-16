@@ -18,6 +18,9 @@
       }
     },
     "userInterfaceStyle": "dark",
-    "owner": "bombh"
+    "owner": "bombh",
+    "experiments": {
+      "tsconfigPaths": true
+    }
   }
 }
