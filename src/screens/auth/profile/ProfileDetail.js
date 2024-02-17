@@ -10,7 +10,7 @@ import { Man, Woman } from '../../../constants/image'
 import { ButtonChat, ButtonFlash, ButtonMicro, ButtonPlus, ModalMessage } from '../../../components/profile/common/'
 
 // import ModalMessage from '../../../components/profile/common/ModalMessage'
-
+import {LinearGradient} from 'expo-linear-gradient'
 import Animated, { interpolate, useAnimatedRef, useAnimatedStyle, useScrollViewOffset } from 'react-native-reanimated'
 import Toast from 'react-native-toast-message'
 import useRdv from '../../../hook/useRdv'
@@ -33,7 +33,7 @@ const ProfileDetailScreen = () => {
       'GET',
       'getProfileDetail',
       { 
-         idprofile: id
+         id: id
       }
    )
 
@@ -98,8 +98,11 @@ const ProfileDetailScreen = () => {
                      placeholderContentFit='cover'
                      transition={500}
                   />
+                  <LinearGradient
+                     colors={['rgba(0,0,0,0.8)', 'transparent']}
+                     className='absolute top-0 left-0 right-0 h-24'
+                  />
                </Animated.View>
-               
                
                {/* Back button */}
                <Pressable
@@ -127,12 +130,10 @@ const ProfileDetailScreen = () => {
 
             {/* Action view */}
             <View className="flex-row items-center justify-evenly -mt-7">
-
                   <ButtonChat onPress={openModalMessage} />
                   <ButtonMicro />
                   <ButtonFlash onPress={flashProfile} />
                   <ButtonPlus />
-
             </View>
 
             {/* Infos */}
@@ -148,7 +149,7 @@ const ProfileDetailScreen = () => {
 
                <View className="px-6">
                   <Text className="text-lg text-justify leading-6 text-gray-400">
-                     {data.profile?.COMMENTAIRE}
+                     {data.profile?.comment}
                   </Text>
                </View>
 
