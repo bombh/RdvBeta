@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, Pressable, Dimensions, Button, TextInput } from 'react-native'
+import { View, Text, ScrollView, Pressable, Dimensions, Button, TextInput, SectionList, ActivityIndicator } from 'react-native'
 import { Image } from 'expo-image'
 import React, { useLayoutEffect, useRef } from 'react'
 import { useLocalSearchParams, useNavigation } from 'expo-router'
@@ -76,6 +76,14 @@ const ProfileDetailScreen = () => {
       }
    })
 
+   const DATA = [
+      
+      {
+        title: 'Desserts',
+        data: [{a:"aaaa", b:"bbbb"}, {a:"aaaa2", b:"bbbb"}],
+      },
+    ]
+
    return (
       <>
          <Animated.ScrollView
@@ -135,6 +143,31 @@ const ProfileDetailScreen = () => {
                   <ButtonFlash onPress={flashProfile} />
                   <ButtonPlus />
             </View>
+
+            { isLoading ? (
+                  <ActivityIndicator className='' size="large" color={colors.amber[500]} /> 
+               ) : error ? (
+                  console.log(error),
+                  <Text>Something went wrong</Text>
+               ) : (
+                  <SectionList
+                     scrollEnabled={false}
+                     sections={DATA}
+                     keyExtractor={(item, index) => item + index}
+                     renderItem={({item}) => (
+                        <View className="px-6 pb-3">
+                           <Text className="text-xs text-amber-500">{item.a}</Text>
+                           <Text className="">{item.b}</Text>
+                        </View>
+                      )}
+                     renderSectionHeader={({section: {title}}) => (
+                        <View className="mt-6 mb-3 p-2 bg-cyan-500">
+                           <Text className="text-lg text-center leading-6 text-white">{title}</Text>
+                        </View>
+                     )}
+                  />
+               )
+            }
 
             {/* Infos */}
             <View className='bg-white mt-2'>
